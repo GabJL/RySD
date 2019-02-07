@@ -249,15 +249,50 @@ Te asomas al garaje cercano y ves dos tipos de vehículos: &quot;WIFIplane&quot;
 &lt;&lt;if !$escenas.includes($current_level) &gt;&gt;
 	&lt;&lt;set $escenas = $escenas.concatUnique($current_level) &gt;&gt;
 	&lt;&lt;set $puntos += $puntos_previos&gt;&gt;
+	&lt;&lt;if ndef $ayuda&gt;&gt;
+		&lt;&lt;set $ayuda to {
+			&quot;Conciencia&quot;: &quot;Hay que ser buena gente! :P&quot;,
+			&quot;TCPoUDP&quot;: &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;,
+			&quot;UDP&quot;: &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;,
+			&quot;TCP&quot;: &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;,
+			&quot;URL&quot;: &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;,
+			&quot;IP&quot;: &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca un equipo&quot;,
+			&quot;PUERTO&quot;: &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;,
+			&quot;PRIVADA&quot;: &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;,
+			&quot;EXPERIMENTAL&quot;: &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;,
+			&quot;MAC&quot;: &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;,
+			&quot;DNS&quot;: &quot;DNS es un protocolo que convierte URL a IP&quot;,
+			&quot;WIFIplane&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
+			&quot;ETHERNETcar&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
+			&quot;CTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;,
+			&quot;RTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;,
+			&quot;PREACUCION&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
+			&quot;CARRETERA&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
+			&quot;Analitica&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
+			&quot;Hamming&quot;: &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;,
+			&quot;DQP&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
+			&quot;CRC&quot;: &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;,
+			&quot;RSA&quot;: &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;,
+			&quot;MD5&quot;: &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;,
+			&quot;FIN2&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
+			&quot;DESTINO&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
+			&quot;FIN3&quot;: &quot;No es bueno quitarse de enmedio, hay que encarar las dificultades ;)&quot;,
+			&quot;FIN4&quot;: &quot;Era buena idea, pero hay casos en que no funciona :P&quot;,
+			&quot;FIN5&quot;: &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;,
+			&quot;FIN6&quot;: &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;
+		} &gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;set _t2 = $ayuda[$current_level] &gt;&gt;
+	&lt;&lt;if _t2 eq &quot;&quot; &gt;&gt;&lt;&lt;set _t2 = &quot;Upss, aún no hay ayuda para esta puntuación&quot; &gt;&gt;&lt;&lt;/if&gt;&gt;	
 	&lt;&lt;if $puntos_previos &lt; 0&gt;&gt;
-		&lt;&lt;set _t = &quot;&lt;div class=\&quot;pierde\&quot;&gt;Has perdido $puntos_previos punto&quot; &gt;&gt;
+		&lt;&lt;set _t = &quot;&lt;div title=\&quot;&quot;+ _t2 +&quot;\&quot; class=\&quot;pierde\&quot;&gt;Has perdido $puntos_previos punto&quot; &gt;&gt;
 	&lt;&lt;else&gt;&gt;
-		&lt;&lt;set _t = &quot;&lt;div class=\&quot;gana\&quot;&gt;Has ganado $puntos_previos punto&quot; &gt;&gt;
+		&lt;&lt;set _t = &quot;&lt;div title=\&quot;&quot;+ _t2 +&quot;\&quot; class=\&quot;gana\&quot;&gt;Has ganado $puntos_previos punto&quot; &gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 	&lt;&lt;if $puntos_previos != -1 and $punto_previos != 1 &gt;&gt; 
 		&lt;&lt;set _t += &quot;s&quot; &gt;&gt; 
 	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;set _t += &quot; - [[Explicar puntos|Explicacion]] &lt;/div&gt;&quot; &gt;&gt;
+	&lt;&lt;set _t += &quot;&lt;/div&gt;&quot; &gt;&gt;
 	&lt;&lt;if $puntos_previos == 0 &gt;&gt;
 		&lt;&lt;set _t = &quot;&quot;&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
