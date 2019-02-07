@@ -263,31 +263,45 @@ Te asomas al garaje cercano y ves dos tipos de vehículos: &quot;WIFIplane&quot;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/silently&gt;&gt; _t</tw-passagedata><tw-passagedata pid="13" name="Explicacion" tags="" position="597,322.5" size="100,100">&lt;&lt;link &quot;Volver&quot; $current_level&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;&lt;if $current_level == &quot;Conciencia&quot;&gt;&gt;
-Hay que ser buena gente! :P
-&lt;&lt;elseif $current_level == &quot;TCPoUDP&quot;&gt;&gt;
-Así me gusta con inquietudes y ganas de ayudar! :)
-&lt;&lt;elseif $current_level == &quot;UDP&quot;&gt;&gt;
-UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP).
-&lt;&lt;elseif $current_level == &quot;TCP&quot;&gt;&gt;
-TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!.
-&lt;&lt;elseif $current_level == &quot;URL&quot;&gt;&gt;
-Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica.
-&lt;&lt;elseif $current_level == &quot;IP&quot;&gt;&gt;
-Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca un equipo.
-&lt;&lt;elseif $current_level == &quot;PUERTO&quot;&gt;&gt;
-Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado
-&lt;&lt;elseif $current_level == &quot;PRIVADA&quot;&gt;&gt;
-Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet
-&lt;&lt;elseif $current_level == &quot;EXPERIMENTAL&quot;&gt;&gt;
-Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet
-&lt;&lt;elseif $current_level == &quot;MAC&quot;&gt;&gt;
-Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)
-&lt;&lt;elseif $current_level == &quot;DNS&quot;&gt;&gt;
-DNS es un protocolo que convierte URL a IP
-&lt;&lt;else&gt;&gt;
-Nos has pillado ... aún no hemos puesto esta explicación!
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;silently&gt;&gt;
+	&lt;&lt;if ndef $ayuda&gt;&gt;
+		&lt;&lt;set $ayuda to {
+			&quot;Conciencia&quot;: &quot;Hay que ser buena gente! :P&quot;,
+			&quot;TCPoUDP&quot;: &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;,
+			&quot;UDP&quot;: &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;,
+			&quot;TCP&quot;: &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;,
+			&quot;URL&quot;: &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;,
+			&quot;IP&quot;: &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca un equipo&quot;,
+			&quot;PUERTO&quot;: &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;,
+			&quot;PRIVADA&quot;: &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;,
+			&quot;EXPERIMENTAL&quot;: &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;,
+			&quot;MAC&quot;: &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;,
+			&quot;DNS&quot;: &quot;DNS es un protocolo que convierte URL a IP&quot;,
+			&quot;WIFIplane&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
+			&quot;ETHERNETcar&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
+			&quot;CTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;,
+			&quot;RTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;,
+			&quot;PREACUCION&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
+			&quot;CARRETERA&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
+			&quot;Analitica&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
+			&quot;Hamming&quot;: &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;,
+			&quot;DQP&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
+			&quot;CRC&quot;: &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;,
+			&quot;RSA&quot;: &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;,
+			&quot;MD5&quot;: &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;,
+			&quot;FIN2&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
+			&quot;DESTINO&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
+			&quot;FIN3&quot;: &quot;No es bueno quitarse de enmedio, hay que encarar las dificultades ;)&quot;,
+			&quot;FIN4&quot;: &quot;Era buena idea, pero hay casos en que no funciona :P&quot;,
+			&quot;FIN5&quot;: &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;,
+			&quot;FIN6&quot;: &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;
+		} &gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+	&lt;&lt;set _t = $ayuda[$current_level] &gt;&gt;
+	&lt;&lt;if _t eq &quot;&quot; &gt;&gt;&lt;&lt;set _t = &quot;Upss, aún no hay ayuda para esta puntuación&quot; &gt;&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+&lt;&lt;= _t &gt;&gt;
+
 [img[explicacion.gif]]</tw-passagedata><tw-passagedata pid="14" name="EXPERIMENTAL" tags="" position="1137,849" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
 El funcionario te mira con cara extrañada y te dice:
 
@@ -495,7 +509,7 @@ Y te echa, dejándote a la interperie. Notas como el frio empieza a hacer efecto
 [img[congelado.gif]]</tw-passagedata><tw-passagedata pid="34" name="DESTINO" tags="" position="765,2188" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
 Te diriges al andén elegido y te montas en el tren. Tras un rato de viaje llegas al destino.
 
-Nada más bajarte, ves la conocida simbología de la UMA. ¡Has acertado! Pero notas que Mensajín empieza a cambiar (&lt;b&gt;¡Twist Plot!&lt;/b&gt;):
+Nada más bajarte, ves la conocida simbología de la UMA. ¡Has acertado! Pero notas que Mensajín empieza a cambiar (&lt;b&gt;¡Plot Twist!&lt;/b&gt;):
 
 - ¡JAJAJÁ! Gracias por traerme aquí! Realmente soy un virus y traigo código Javascript malicioso y voy a enviar los datos personales de todos los alumnos a un pirata. ¡JAJAJÁ!
 
