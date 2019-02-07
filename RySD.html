@@ -121,7 +121,11 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
   	color: red;
   	font-weight: bold;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+img {
+  	max-width: 100%;
+  	height: auto;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">
 </script><tw-passagedata pid="1" name="Inicio" tags="" position="860,395" size="100,100">&lt;&lt;set $puntos = 0&gt;&gt;&lt;&lt;set $escenas = [&quot;Inicio&quot;]&gt;&gt;&lt;&lt;set $current_level=passage()&gt;&gt;
 Aunque deberías estar haciendo cosas más importantes, estás procastinando por el ordenador y de repente sientes que alguien te tira de manga.
 
@@ -305,7 +309,7 @@ Pero tras ver que Mensajín empieza a poner la misma cara que pones cuando el pr
 [[Seguir|ENLACE]]</tw-passagedata><tw-passagedata pid="16" name="WIFIplane" tags="" position="479,1290" size="100,100">&lt;&lt;set $puntos_previos = 4&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
 Decides coger el WIFIplane aunque al mirar al cielo, no estás seguro de que tu elección fuese la mejor (hay tormenta que causa interferencias, muchos aviones volando, además de otras cosas que rezas que sean pájaros, ...).
 
-Aparentemente el avión va de forma automática ya que no tiene controles, solo dos botones llamadas &quot;CTS&quot; y &quot;RTS&quot;. ¿Cuál pulsarás?
+Aparentemente el avión va de forma automática ya que no tiene controles, solo dos botones llamados &quot;CTS&quot; y &quot;RTS&quot;. ¿Cuál pulsarás?
 
 [[RTS]]
 [[CTS]]
@@ -322,14 +326,14 @@ Hay varios coches similares al que conduces pasando. Tras esperar un rato, ves u
 
 [[Te lanzas a la carretera|CARRETERA]]
 [[No te fías, mejor esperar un poco|PRECAUCION]]</tw-passagedata><tw-passagedata pid="18" name="RTS" tags="" position="531,1448" size="100,100">&lt;&lt;set $puntos_previos = +1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Al pulsar el botón &quot;RTS&quot; ves que envías un mensaje a la torre de control para solicitar despegar y acabo de un rato te confirman con enviándote un CTS que puedes despegar.
+Al pulsar el botón &quot;RTS&quot; ves que envías un mensaje a la torre de control para solicitar despegar y al acabo de un rato te confirman con  una trama CTS que puedes despegar.
 
 El WIFIplane emprende el vuelo llevándote a lo desconocido
 
 [img[desconocido.gif]]
 
 [[Ir a lo desconocido|ROUTER]]</tw-passagedata><tw-passagedata pid="19" name="CTS" tags="" position="370,1446" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Pulsas &quot;CTS&quot; lo que provoca que lances un haz de luz, pero tras esperar no ocurre nada.
+Pulsas &quot;CTS&quot; lo que provoca que lances una señal, pero tras esperar no ocurre nada.
 
 [img[CTS.gif]]
 
