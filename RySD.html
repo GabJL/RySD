@@ -127,6 +127,14 @@ img {
     height: auto;
 }
 
+table, th, td {
+  border: 1px solid white;
+}
+
+.passage th, .passage td {
+  padding: 10px;
+}
+
 button[data-balloon] {
   overflow: visible; }
 
@@ -466,9 +474,10 @@ button[data-balloon] {
     white-space: normal;
     width: 100%; }
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="Inicio" tags="" position="860,395" size="100,100">&lt;&lt;set $puntos = 0&gt;&gt;&lt;&lt;set $escenas = [&quot;Inicio&quot;]&gt;&gt;&lt;&lt;set $current_level=passage()&gt;&gt;
-Aunque deberías estar haciendo cosas más importantes, estás procastinando por el ordenador y de repente sientes que alguien te tira de manga.
+
+</script><tw-passagedata pid="1" name="Inicio" tags="" position="860,395" size="100,100">Aunque deberías estar haciendo cosas más importantes, estás procastinando por el ordenador y de repente sientes que alguien te tira de manga.
 
 Al volverte, ves un pequeño mensaje HTTP que te mira con cara suplicante y te dice de forma entrecortada:
 - ¡Ho-ola! Me he perdido, ¿puedes ayudarme?
@@ -476,277 +485,162 @@ Al volverte, ves un pequeño mensaje HTTP que te mira con cara suplicante y te d
 [img[temor.gif]]
 
 [[Sí, claro|TCPoUDP]]
-[[No, estoy ocupado haciendo nada|Conciencia]]</tw-passagedata><tw-passagedata pid="2" name="TCPoUDP" tags="" position="721,541" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[No, estoy ocupado haciendo nada|Conciencia]]</tw-passagedata><tw-passagedata pid="2" name="TCPoUDP" tags="" position="721,541" size="100,100">&lt;&lt;puntuacion 5 &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;&gt;&gt;
 El header del mensaje HTTP se ilumina de alegría:
-
 - ¡Muchísimas gracias! Vi a mis amigos ir por este camino.
 
 Le sigues hasta que encuentras con una muralla con dos puertas. En una de ellas pone TCP y en la otra UDP.
-
-- ¿Cuál debemos elegir? - pregunta mensajín (es el nombre que mentalmente le has puesto con tu enorme talento para elegir nombres novedosos)
+- ¿Cuál debemos elegir? - pregunta Mensajín (es el nombre que mentalmente le has puesto con tu enorme talento para elegir nombres novedosos)
 
 [img[camino.gif]]
 
 [[TCP]]
-[[UDP]]</tw-passagedata><tw-passagedata pid="3" name="Conciencia" tags="" position="935,545" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[UDP]]</tw-passagedata><tw-passagedata pid="3" name="Conciencia" tags="" position="935,545" size="100,100">&lt;&lt;puntuacion -1 &quot;Hay que ser buena gente! :P&quot;&gt;&gt;
 Aunque estás tentado a abandonarlo, finalmente tu buena conciencia puede contigo y decides ayudarlo
 
 [img[conciencia.gif]]
 
-[[Sí, te ayudaré|TCPoUDP]]</tw-passagedata><tw-passagedata pid="4" name="TCP" tags="" position="682,671" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;&lt;&lt;if ndef $tcp&gt;&gt; &lt;&lt;set $tcp=true&gt;&gt;
-Al entrar ves que la confianza de mensajín aumenta y te dice:
-
+[[Sí, te ayudaré|TCPoUDP]]</tw-passagedata><tw-passagedata pid="4" name="TCP" tags="" position="682,671" size="100,100">&lt;&lt;puntuacion 5 &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;&gt;&gt;
+&lt;&lt;if ndef $tcp&gt;&gt;&lt;&lt;set $tcp to 0&gt;&gt;Al entrar ves que la confianza de mensajín aumenta y te dice:
 - ¡Sí! Es por aquí, esto me suena.
 
 Al fijarte bien, ves que mensajín a cambiado parece que más confiado y fuerte ... ¡ha digievolucionado a segmento TCP!
 
-Ves que hay un paso fronterizo a los terrenos IP, pero para su acceso, te piden un formulartio de tipo I.P.H.E.A.D.E.R.
-
-Ves un mostrador con un funcionario que parece que te puede ayudar. Al acercarte te dice:
-
+Ves que hay un paso fronterizo a los terrenos IP, pero para su acceso, te piden un formulartio de tipo I.P.H.E.A.D.E.R. Ves un mostrador con un funcionario que parece que te puede con eso. Al acercarte te dice:
 - ¿A dónde queréis ir?
 
 Mensajín (o ya Segmentín) te dice: 
 - Yo se que quiero ir a www.uma.es, pero no se si eso vale.&lt;&lt;/if&gt;&gt;
 
-¿Qué le dices al amable funcionario?
-
 [img[frontera.gif]]
 
+¿Qué le dices al amable funcionario?
 [[¿www.uma.es?|URL]]
 [[¿150.214.40.97?|IP]]
 [[¿b4:d5:bd:f1:dd:ad?|MAC]]
 [[¿80?|PUERTO]]
 [[¿250.250.250.10?|EXPERIMENTAL]]
-[[¿10.0.0.10?|PRIVADA]]</tw-passagedata><tw-passagedata pid="5" name="UDP" tags="" position="938,670" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[¿10.0.0.10?|PRIVADA]]</tw-passagedata><tw-passagedata pid="5" name="UDP" tags="" position="938,670" size="100,100">&lt;&lt;puntuacion -5 &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;&gt;&gt;
 Nada más entrar en el camino, sientes que la oscuridad te rodea. Una vez que tu vista se acostumbras ves que estás rodeado de unos datagramas UDP con mala pinta que te dicen:
-
 - ¡Vamos a enseñarle porqué UDP es un servicio no fiable!
 
-Aunque intentas huir, ves que mensajín está rodeado y sin vía de escape.
+Aunque intentas huir, ves que Mensajín está rodeado y sin vía de escape. Para evitarle sufrimiento decides liberar su memoria ... 
 
-Para evitarle sufrimiento decides liberar su memoria ... 
-
+[img[spiderman.gif]]
 !FIN
-
-¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
-
-[img[spiderman.gif]]</tw-passagedata><tw-passagedata pid="6" name="URL" tags="" position="410,845" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-El funcionario te mira con cara extrañada y te dice:
-
+¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="URL" tags="" position="410,845" size="100,100">&lt;&lt;puntuacion -1 &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;&gt;&gt;
+El funcionario te mira con cara extraña y te dice:
 - No entiendo URLs, yo solo trabajo con números.
+
 [img[no.gif]]
 
-[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="7" name="IP" tags="" position="560,845" size="100,100">&lt;&lt;set $puntos_previos = +5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="7" name="IP" tags="" position="560,845" size="100,100">&lt;&lt;puntuacion 5 &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca unívocamente a un equipo&quot;&gt;&gt;
 El funcionario asiente, rellena un formulario de tipo I.P.H.E.A.D.E.R y te lo pasa.
 
 Mensajín te mira con veneración:
-
 - ¡Eres muy sabio! ¿Cómo supiste que ese era el destino?
 
 [img[mirada.gif]]
 
-
 [[Un mago no revela sus secretos|ENLACE]]
 [[Mi amigo DNS me ayudó|DNS]]
 
-</tw-passagedata><tw-passagedata pid="8" name="MAC" tags="" position="710,845" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-El funcionario te mira con cara extrañada y te dice:
-
+</tw-passagedata><tw-passagedata pid="8" name="MAC" tags="" position="710,845" size="100,100">&lt;&lt;puntuacion -1 &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;&gt;&gt;
+El funcionario te mira con cara extraña y te dice:
 - Eso tiene muchos números, ¿no me estarás diciendo una dirección MAC en vez de una IP?.
 
 [img[no.gif]]
 
-[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="9" name="PUERTO" tags="" position="860,845" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-El funcionario te mira con cara extrañada y te dice:
-
+[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="9" name="PUERTO" tags="" position="860,845" size="100,100">&lt;&lt;puntuacion -1 &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;&gt;&gt;
+El funcionario te mira con cara extraña y te dice:
 - Eso tiene pocos números, ¿no te estarás confundiendo con el puerto?
 
 [img[no.gif]]
 
-[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="10" name="PRIVADA" tags="" position="1010,845" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-El funcionario te mira con cara extrañada y te dice:
-
+[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="10" name="PRIVADA" tags="" position="1010,845" size="100,100">&lt;&lt;puntuacion -1 &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;&gt;&gt;
+El funcionario te mira con cara extraña y te dice:
 - Uhmmm... tras consultar mis registros me comentan que esa dirección no te vale para visitar sitios externos.
 
 [img[no.gif]]
 
-[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="11" name="ENLACE" tags="" position="554,1140" size="100,100">&lt;&lt;set $puntos_previos = 0&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Tras enseñar el formulario en el control fronterizo, entras sin problemas.
+[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="11" name="ENLACE" tags="" position="554,1140" size="100,100">Tras enseñar el formulario en el control fronterizo, entras sin problemas.
 
-Por fin ves la salida del equipo. Al acercarte, observas un cartel que pone &quot;Elija el vehículo adecuado para salir del equipo&quot;.
-
-Te asomas al garaje cercano y ves dos tipos de vehículos: &quot;WIFIplane&quot; y &quot;ETHERNETcar&quot;. Mensajín te comenta:
-
-- Ya voy tarde, deberíamos coger el más rápido.
-
-¿Cuál seleccionas?
+Por fin ves la salida del equipo. Al acercarte, observas un cartel que pone &quot;Elija el vehículo adecuado para salir del equipo&quot;. Te asomas al garaje cercano y ves dos tipos de vehículos: &quot;WIFIplane&quot; y &quot;ETHERNETcar&quot;. 
 
 [img[carvsplane.gif]]
 
+Mensajín te comenta:
+- Ya voy tarde, deberíamos coger el más rápido.
+
+¿Cuál seleccionas?
 [[WIFIplane]]
-[[ETHERNETcar]]</tw-passagedata><tw-passagedata pid="12" name="Puntos" tags="" position="594,203" size="100,100">&lt;&lt;silently&gt;&gt;
-&lt;&lt;set _t = &quot;&quot;&gt;&gt;
-&lt;&lt;if !$escenas.includes($current_level) &gt;&gt;
-	&lt;&lt;set $escenas = $escenas.concatUnique($current_level) &gt;&gt;
-	&lt;&lt;set $puntos += $puntos_previos&gt;&gt;
-	&lt;&lt;if ndef $ayuda&gt;&gt;
-		&lt;&lt;set $ayuda to {
-			&quot;Conciencia&quot;: &quot;Hay que ser buena gente! :P&quot;,
-			&quot;TCPoUDP&quot;: &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;,
-			&quot;UDP&quot;: &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;,
-			&quot;TCP&quot;: &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;,
-			&quot;URL&quot;: &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;,
-			&quot;IP&quot;: &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca un equipo&quot;,
-			&quot;PUERTO&quot;: &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;,
-			&quot;PRIVADA&quot;: &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;,
-			&quot;EXPERIMENTAL&quot;: &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;,
-			&quot;MAC&quot;: &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;,
-			&quot;DNS&quot;: &quot;DNS es un protocolo que convierte URL a IP&quot;,
-			&quot;WIFIplane&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
-			&quot;ETHERNETcar&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
-			&quot;CTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;,
-			&quot;RTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;,
-			&quot;PREACUCION&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
-			&quot;CARRETERA&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
-			&quot;Analitica&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
-			&quot;Hamming&quot;: &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;,
-			&quot;DQP&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
-			&quot;CRC&quot;: &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;,
-			&quot;RSA&quot;: &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;,
-			&quot;MD5&quot;: &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;,
-			&quot;FIN2&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
-			&quot;DESTINO&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
-			&quot;FIN3&quot;: &quot;No es bueno quitarse de enmedio, hay que encarar las dificultades ;)&quot;,
-			&quot;FIN4&quot;: &quot;Era buena idea, pero hay casos en que no funciona :P&quot;,
-			&quot;FIN5&quot;: &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;,
-			&quot;FIN6&quot;: &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;
-		} &gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;set _t2 = $ayuda[$current_level] &gt;&gt;
-	&lt;&lt;if _t2 eq &quot;&quot; &gt;&gt;&lt;&lt;set _t2 = &quot;Upss, aún no hay ayuda para esta puntuación&quot; &gt;&gt;&lt;&lt;/if&gt;&gt;	
-	&lt;&lt;if $puntos_previos &lt; 0&gt;&gt;
-		&lt;&lt;set _t = &quot;&lt;div data-balloon=\&quot;&quot;+ _t2 +&quot;\&quot; data-balloon-pos=\&quot;down\&quot; data-balloon-length=\&quot;fit\&quot; class=\&quot;pierde\&quot;&gt;Has perdido $puntos_previos punto&quot; &gt;&gt;
-	&lt;&lt;else&gt;&gt;
-		&lt;&lt;set _t = &quot;&lt;div data-balloon=\&quot;&quot;+ _t2 +&quot;\&quot; data-balloon-pos=\&quot;down\&quot; data-balloon-length=\&quot;fit\&quot; class=\&quot;gana\&quot; &gt;Has ganado $puntos_previos punto&quot; &gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;if $puntos_previos != -1 and $punto_previos != 1 &gt;&gt; 
-		&lt;&lt;set _t += &quot;s&quot; &gt;&gt; 
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;set _t += &quot;&lt;/div&gt;&quot; &gt;&gt;
-	&lt;&lt;if $puntos_previos == 0 &gt;&gt;
-		&lt;&lt;set _t = &quot;&quot;&gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;/silently&gt;&gt; _t</tw-passagedata><tw-passagedata pid="13" name="Explicacion" tags="" position="597,322" size="100,100">&lt;&lt;link &quot;Volver&quot; $current_level&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;&lt;silently&gt;&gt;
-	&lt;&lt;if ndef $ayuda&gt;&gt;
-		&lt;&lt;set $ayuda to {
-			&quot;Conciencia&quot;: &quot;Hay que ser buena gente! :P&quot;,
-			&quot;TCPoUDP&quot;: &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;,
-			&quot;UDP&quot;: &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;,
-			&quot;TCP&quot;: &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;,
-			&quot;URL&quot;: &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;,
-			&quot;IP&quot;: &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca un equipo&quot;,
-			&quot;PUERTO&quot;: &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;,
-			&quot;PRIVADA&quot;: &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;,
-			&quot;EXPERIMENTAL&quot;: &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;,
-			&quot;MAC&quot;: &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;,
-			&quot;DNS&quot;: &quot;DNS es un protocolo que convierte URL a IP&quot;,
-			&quot;WIFIplane&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
-			&quot;ETHERNETcar&quot;: &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado con Ethernet&quot;,
-			&quot;CTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;,
-			&quot;RTS&quot;: &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;,
-			&quot;PREACUCION&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
-			&quot;CARRETERA&quot;: &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;,
-			&quot;Analitica&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
-			&quot;Hamming&quot;: &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;,
-			&quot;DQP&quot;: &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;,
-			&quot;CRC&quot;: &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;,
-			&quot;RSA&quot;: &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;,
-			&quot;MD5&quot;: &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;,
-			&quot;FIN2&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
-			&quot;DESTINO&quot;: &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;,
-			&quot;FIN3&quot;: &quot;No es bueno quitarse de enmedio, hay que encarar las dificultades ;)&quot;,
-			&quot;FIN4&quot;: &quot;Era buena idea, pero hay casos en que no funciona :P&quot;,
-			&quot;FIN5&quot;: &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;,
-			&quot;FIN6&quot;: &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;
-		} &gt;&gt;
-	&lt;&lt;/if&gt;&gt;
-	&lt;&lt;set _t = $ayuda[$current_level] &gt;&gt;
-	&lt;&lt;if _t eq &quot;&quot; &gt;&gt;&lt;&lt;set _t = &quot;Upss, aún no hay ayuda para esta puntuación&quot; &gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/silently&gt;&gt;
-&lt;&lt;= _t &gt;&gt;
-
-[img[explicacion.gif]]</tw-passagedata><tw-passagedata pid="14" name="EXPERIMENTAL" tags="" position="1137,849" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[ETHERNETcar]]</tw-passagedata><tw-passagedata pid="12" name="EXPERIMENTAL" tags="" position="1137,849" size="100,100">&lt;&lt;puntuacion -1 &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;&gt;&gt;
 El funcionario te mira con cara extrañada y te dice:
-
 - Uhmmm... tras consultar mis registros me comentan que esa IP no existe.
 
 [img[no.gif]]
 
-[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="15" name="DNS" tags="" position="450,995" size="100,100">&lt;&lt;set $puntos_previos = +5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Intentar otra|TCP]]</tw-passagedata><tw-passagedata pid="13" name="DNS" tags="" position="450,995" size="100,100">&lt;&lt;puntuacion 5 &quot;DNS es un protocolo que permite la conviersión de URL a IP&quot;&gt;&gt;
 Le empiezas a explicar:
-
 - DNS es un sistema que nos permite convertir URL a IP. Para ello envía un mensaje DNS QUERY usando UDP ...
 
 Pero tras ver que Mensajín empieza a poner la misma cara que pones cuando el profesor se enrolla, decides concluir:
-
 - ... es ¡magia!. Tengo poderes especiales.
 
 [img[aburrido.gif]]
 
-[[Seguir|ENLACE]]</tw-passagedata><tw-passagedata pid="16" name="WIFIplane" tags="" position="479,1290" size="100,100">&lt;&lt;set $puntos_previos = 4&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Avanzar al puesto fronterizo|ENLACE]]</tw-passagedata><tw-passagedata pid="14" name="WIFIplane" tags="" position="479,1290" size="100,100">&lt;&lt;puntuacion 4 &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado como Ethernet&quot;&gt;&gt;
 Decides coger el WIFIplane aunque al mirar al cielo, no estás seguro de que tu elección fuese la mejor (hay tormenta que causa interferencias, muchos aviones volando, además de otras cosas que rezas que sean pájaros, ...).
 
-Aparentemente el avión va de forma automática ya que no tiene controles, solo dos botones llamados &quot;CTS&quot; y &quot;RTS&quot;. ¿Cuál pulsarás?
+Aparentemente el avión funciona de forma automática ya que no tiene controles, solo dos botones llamados &quot;CTS&quot; y &quot;RTS&quot;. 
 
+[img[boton.gif]]
+
+¿Cuál pulsarás?
 [[RTS]]
 [[CTS]]
 
-[img[boton.jpg]]
-</tw-passagedata><tw-passagedata pid="17" name="ETHERNETcar" tags="" position="751,1298" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="15" name="ETHERNETcar" tags="" position="751,1298" size="100,100">&lt;&lt;puntuacion 5 &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado como Ethernet&quot;&gt;&gt;
 Decides coger el coche que parece más fiable y sencillo de conducir.
 
 La salida del garaje para incorportarte a la carretera tiene una visibilidad mínima, apenas distingues los coches que están pasando por la incorporación.
 
-Hay varios coches similares al que conduces pasando. Tras esperar un rato, ves un hueco para entrar. 
-
 [img[trafico.gif]]
 
-[[Te lanzas a la carretera|CARRETERA]]
-[[No te fías, mejor esperar un poco|PRECAUCION]]</tw-passagedata><tw-passagedata pid="18" name="RTS" tags="" position="531,1448" size="100,100">&lt;&lt;set $puntos_previos = +1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Al pulsar el botón &quot;RTS&quot; ves que envías un mensaje a la torre de control para solicitar despegar y al acabo de un rato te confirman con  una trama CTS que puedes despegar.
+Hay varios coches similares al que conduces pasando por la carretera. Tras esperar un rato, ves un hueco para entrar. 
 
-El WIFIplane emprende el vuelo llevándote a lo desconocido
+[[Te lanzas a la carretera|CARRETERA]]
+[[No te fías, mejor esperar un poco|PRECAUCION]]</tw-passagedata><tw-passagedata pid="16" name="RTS" tags="" position="531,1448" size="100,100">&lt;&lt;puntuacion 1 &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;&gt;&gt;
+Al pulsar el botón &quot;RTS&quot; ves que envías un mensaje a la torre de control para solicitar despegar y al acabo de un rato te confirman con  una trama CTS que puedes despegar.
 
 [img[desconocido.gif]]
 
-[[Ir a lo desconocido|ROUTER]]</tw-passagedata><tw-passagedata pid="19" name="CTS" tags="" position="370,1446" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+El WIFIplane emprende el vuelo llevándote a lo desconocido
+[[Ir a lo desconocido|ROUTER]]</tw-passagedata><tw-passagedata pid="17" name="CTS" tags="" position="370,1446" size="100,100">&lt;&lt;puntuacion -1 &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;&gt;&gt;
 Pulsas &quot;CTS&quot; lo que provoca que lances una señal, pero tras esperar no ocurre nada.
 
 [img[CTS.gif]]
 
-[[Decides pulsar RTS|RTS]]</tw-passagedata><tw-passagedata pid="20" name="ROUTER" tags="" position="615,1588" size="100,100">&lt;&lt;set $puntos_previos = 0&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Realizas un viaje alucinante a traves de la RED intelestelar donde has visto cosas que vosotros no creeríais. Atacar naves en llamas más allá de Orión. Has visto rayos-C brillar en la oscuridad ... (paro para no aburrir y que no pidan derechos de autor).
-
-El caso es que llegas a una estación intelestelar enorme llamada ROUTER.
+[[Decides pulsar RTS|RTS]]</tw-passagedata><tw-passagedata pid="18" name="ROUTER" tags="" position="615,1588" size="100,100">Realizas un viaje alucinante a traves de la RED intelestelar donde has visto cosas que vosotros no creeríais. Atacar naves en llamas más allá de Orión. Has visto rayos-C brillar en la oscuridad ... (paro para no aburrir y que no pidan derechos de autor).
 
 [img[router.gif]]
 
-[[Entrar|Error]]</tw-passagedata><tw-passagedata pid="21" name="CARRETERA" tags="" position="676,1446" size="100,100">&lt;&lt;set $puntos_previos = +1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Aprietas el accelerador y aunque estás a punto de llevarte otro coche por delante, te incorporas a la carretera. Nadie pita ni nada, parece que es la forma normal de entrar en la carretera.
+El caso es que llegas a una estación intelestelar enorme llamada ROUTER.
 
-No ves el final de la carretera que se pierde en en el horizonte. ¿Qué te esperará más allá?
+[[Entrar en el ROUTER|Error]]</tw-passagedata><tw-passagedata pid="19" name="CARRETERA" tags="" position="676,1446" size="100,100">&lt;&lt;puntuacion 1 &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;&gt;&gt;
+Aprietas el accelerador y aunque estás a punto de llevarte otro coche por delante, te incorporas a la carretera. Nadie pita ni nada, parece que es la forma normal de entrar en la carretera.
 
 [img[incorporacion.gif]]
 
-[[Ir a lo desconocido|ROUTER]]</tw-passagedata><tw-passagedata pid="22" name="PRECAUCION" tags="" position="868,1441" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+No ves el final de la carretera que se pierde en en el horizonte. ¿Qué te esperará más allá?
+
+[[Ir a lo desconocido|ROUTER]]</tw-passagedata><tw-passagedata pid="20" name="PRECAUCION" tags="" position="868,1441" size="100,100">&lt;&lt;puntuacion -1 &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;&gt;&gt;
 Siguiendo tu valentía habitual, esperas un momento y ves que los coches no paran de pasar y que los periodos sin coches siempre son pequeños, así que hay que asumir el riesgo.
 
 [img[cobarde.gif]]
 
-[[Te lanzas a la carretera|CARRETERA]]</tw-passagedata><tw-passagedata pid="23" name="marcador" tags="widget" position="737,228" size="100,100">&lt;&lt;widget &quot;updatescoreboard&quot;&gt;&gt;
+[[Te lanzas a la carretera|CARRETERA]]</tw-passagedata><tw-passagedata pid="21" name="marcador" tags="widget" position="1014,266" size="100,100">&lt;&lt;widget &quot;updatescoreboard&quot;&gt;&gt;
 	\&lt;&lt;silently&gt;&gt;
 		/% Create the scoreboard variable if it doesn&#39;t exist. %/
 		&lt;&lt;if ndef $scoreboard&gt;&gt;
@@ -773,7 +667,7 @@ Siguiendo tu valentía habitual, esperas un momento y ves que los coches no para
 &lt;&lt;widget &quot;showscoreboard&quot;&gt;&gt;
 	\&lt;&lt;nobr&gt;&gt;
 		&lt;&lt;if def $scoreboard&gt;&gt;
-			&lt;table border=0&gt;
+			&lt;table&gt;
 			&lt;tr&gt;&lt;th&gt;Posicion&lt;/th&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Puntos&lt;/th&gt;&lt;/tr&gt;
 			&lt;&lt;for _i, _pair range $scoreboard&gt;&gt;
 				&lt;tr&gt;&lt;td&gt;&lt;&lt;print _i + 1&gt;&gt;.&lt;/td&gt;&lt;td&gt;_pair[0]&lt;/td&gt;&lt;td&gt;_pair[1]&lt;/td&gt;&lt;/tr&gt;
@@ -781,16 +675,14 @@ Siguiendo tu valentía habitual, esperas un momento y ves que los coches no para
 			&lt;/table&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/nobr&gt;&gt;\
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Clasificacion" tags="" position="865,232" size="100,100">&lt;&lt;updatescoreboard&gt;&gt;\
-Felicidades $playerName! has conseguido $puntos puntos.
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Clasificacion" tags="" position="1016,397" size="100,100">&lt;&lt;updatescoreboard&gt;&gt;\
+Felicidades $playerName! has conseguido $puntos puntos (de 51).
 
-!Clasificación local:
+!Clasificación:
 &lt;&lt;showscoreboard&gt;&gt;
-
-&lt;&lt;link &quot;Reiniciar Juego&quot;&gt;&gt;
+&lt;&lt;link &quot;Volver a intentarlo&quot;&gt;&gt;
 	&lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="Error" tags="" position="615,1738" size="100,100">&lt;&lt;set $puntos_previos = 0&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;&lt;&lt;if ndef $error&gt;&gt;&lt;&lt;set $error=true&gt;&gt;
-Nada más entrar en la estación, te pasan a una zona de cuarentena para ver si estás bien (desde tu posición ves que a los que detectan algún problema los expulsan sin compasión).
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Error" tags="" position="615,1738" size="100,100">&lt;&lt;if ndef $error&gt;&gt;&lt;&lt;set $error=true&gt;&gt;Nada más entrar en la estación, te pasan a una zona de cuarentena para ver si estás bien (desde tu posición ves que a los que detectan algún problema los expulsan sin compasión).
 
 Se te acerca un enfermero y te pregunta:&lt;&lt;/if&gt;&gt;
 
@@ -804,152 +696,171 @@ Se te acerca un enfermero y te pregunta:&lt;&lt;/if&gt;&gt;
 [[¿un CRC?|CRC]]
 [[¿un RSA?|RSA]]
 [[¿un MD5?|MD5]]
-</tw-passagedata><tw-passagedata pid="26" name="Analitica" tags="" position="240,1888" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="24" name="Analitica" tags="" position="240,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
-
 - ¿Aún no te has dado cuenta que no somos personas sino una triste ristra de bits?
 
 [img[error.gif]]
 
-[[Volver|Error]] </tw-passagedata><tw-passagedata pid="27" name="Hamming" tags="" position="390,1888" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Volver|Error]] </tw-passagedata><tw-passagedata pid="25" name="Hamming" tags="" position="390,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
-
 - Hace tiempo que ya no trabaja aquí, aunque cuando conseguía encontrar un error era capaz de sanarlo, su eficacia era muy baja, requería mucho papeleo.
 
 [img[error.gif]]
 
-[[Volver|Error]] </tw-passagedata><tw-passagedata pid="28" name="DQP" tags="" position="540,1888" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Volver|Error]] </tw-passagedata><tw-passagedata pid="26" name="DQP" tags="" position="540,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
-
 - No me estarás diciendo letras al azar, ¿no?
 
 [img[error.gif]]
 
-[[Volver|Error]] </tw-passagedata><tw-passagedata pid="29" name="CRC" tags="" position="690,1888" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Volver|Error]] </tw-passagedata><tw-passagedata pid="27" name="CRC" tags="" position="690,1888" size="100,100">&lt;&lt;puntuacion 5 &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;&gt;&gt;
 El enfermero asiente y te hace una comprobación CRC rutinaria. Aunque los cálculos son rápidos, notas como tu nerviosismo aumenta a la espera de los resultados.
 
 [img[nervioso.gif]]
 
 Finalmente el enfermero te mira y te dice:
-
 - El resultado indica que está bien, puedes pasar a la estación de salida para seguir tu viaje.
 
-[[Aliviado, te diriges a la estación de salida|Frontera]] </tw-passagedata><tw-passagedata pid="30" name="RSA" tags="" position="840,1888" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Aliviado, te diriges a la estación de salida|Frontera]] </tw-passagedata><tw-passagedata pid="28" name="RSA" tags="" position="840,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
-
 - No necesitas ese análisis, no estás encriptado.
 
 [img[error.gif]]
 
-[[Volver|Error]] </tw-passagedata><tw-passagedata pid="31" name="MD5" tags="" position="990,1888" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Volver|Error]] </tw-passagedata><tw-passagedata pid="29" name="MD5" tags="" position="990,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
-
 - Nosotros no usamos ese tipo de análisis, eso se usa a más alto nivel
 
 [img[error.gif]]
 
-[[Volver|Error]] </tw-passagedata><tw-passagedata pid="32" name="Frontera" tags="" position="693,2024" size="100,100">&lt;&lt;set $puntos_previos = 0&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-La estación de salida está formado por cinco andenes numerados del 1 a 5. Encima de ellos hay una pantalla que indica el destino de cada uno de ellos. Su contenido es:
-
-&lt;table border = 0&gt;
+[[Volver|Error]] </tw-passagedata><tw-passagedata pid="30" name="Frontera" tags="" position="693,2024" size="100,100">La estación de salida está formado por cinco andenes numerados del 1 a 5. Encima de ellos hay una pantalla que indica el destino de cada uno de ellos. Su contenido es:
+&lt;table&gt;
 &lt;tr&gt;&lt;th&gt;Destino&lt;/th&gt;&lt;th&gt;Andén&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;130.0.0.0/8&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;126.0.0.0/1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;150.214.40.0/26&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;150.214.40.64/26&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;130.0.0.0 /8&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;126.0.0.0 /1&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;150.214.40.0 /26&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;150.214.40.64 /26&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;Otros destinos&lt;/td&gt;&lt;td&gt;5&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
-Examinas tu formulatio I.P.H.E.A.D.E.R. donde está apuntado que tu destino era 150.214.40.97 ¿Qué andén eliges?
+[img[decision.gif]]
 
+Examinas tu formulatio I.P.H.E.A.D.E.R. donde está apuntado que tu destino era 150.214.40.97 ¿Qué andén eliges?
 [[Anden 1|FIN2]]
 [[Anden 2|FIN2]]
 [[Anden 3|FIN2]]
 [[Anden 4|DESTINO]]
 [[Anden 5|FIN2]]
 
-[img[decision.gif]]</tw-passagedata><tw-passagedata pid="33" name="FIN2" tags="" position="615,2188" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="31" name="FIN2" tags="" position="615,2188" size="100,100">&lt;&lt;puntuacion -5 &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;&gt;&gt;
 Te diriges al andén elegido y te montas en el tren. Tras un rato de viaje llegas al destino.
 
-Nada más bajarte, notas que algo no va bien, está nevando y hace muchísimos frio, los carteles están en un idioma raro que no entiendes. 
-
-Te acercas al único edificio que ves. El guardia colocado en la puerta, mira tu formulario I.P.H.E.A.D.E.R. y con un mal español te dice:
-
+Nada más bajarte, notas que algo no va bien, está nevando y hace muchísimos frio y los carteles están en un idioma raro que no entiendes. Te acercas al único edificio que ves. El guardia colocado en la puerta, mira tu formulario I.P.H.E.A.D.E.R. y con un mal español te dice:
 - ¡No ser aquí!
 
 Y te echa, dejándote a la interperie. Notas como el frio empieza a hacer efecto en tu cuerpo ... 
 
+[img[congelado.gif]]
 !FIN
 
-¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
+¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot;&gt;&gt;
 
-[img[congelado.gif]]</tw-passagedata><tw-passagedata pid="34" name="DESTINO" tags="" position="765,2188" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="32" name="DESTINO" tags="" position="765,2188" size="100,100">&lt;&lt;puntuacion 5 &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;&gt;&gt;
 Te diriges al andén elegido y te montas en el tren. Tras un rato de viaje llegas al destino.
 
 Nada más bajarte, ves la conocida simbología de la UMA. ¡Has acertado! Pero notas que Mensajín empieza a cambiar (&lt;b&gt;¡Plot Twist!&lt;/b&gt;):
-
 - ¡JAJAJÁ! Gracias por traerme aquí! Realmente soy un virus y traigo código Javascript malicioso y voy a enviar los datos personales de todos los alumnos a un pirata. ¡JAJAJÁ!
 
 [img[demonio.gif]]
 
 Intermente piensas que realmente todo código Javascript es maliciosos (es el lenguaje del demonio), pero tienes qué actuar. ¿Qué haces?
-
 [[Apagar el ordenador|FIN3]]
 [[Quitar el cable de red del ordenador|FIN4]]
-[[Abres una línea de comandos (Sí, desgraciadamente estamos en Windows)|Comando]]</tw-passagedata><tw-passagedata pid="35" name="FIN3" tags="" position="615,2338" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[Abres una línea de comandos (Sí, desgraciadamente estamos en Windows)|Comando]]</tw-passagedata><tw-passagedata pid="33" name="FIN3" tags="" position="615,2338" size="100,100">&lt;&lt;puntuacion -1 &quot;No es bueno quitarse de en medio, hay que encarar las dificultades ;)&quot;&gt;&gt;
 Apagas el ordenador y haces como si nada hubiese pasado (mala suerte para el siguiente que lo encienda) ... 
 
+[img[escondiendo.gif]]
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
 
-[img[escondiendo.gif]]</tw-passagedata><tw-passagedata pid="36" name="FIN4" tags="" position="765,2338" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="34" name="FIN4" tags="" position="765,2338" size="100,100">&lt;&lt;puntuacion -1 &quot;Era buena idea, pero hay casos en que no funciona :P&quot;&gt;&gt;
 Quitas el cable para evitar que el virus envíe la información y ganar tiempo. Mensajín (quizás es momento de cambiarle el nombre) se enfada y dice:
-
 - ¡Si no es para mi, no será para nadie!
 
-Y borra el disco duro de forma completa.
+[img[enfadado.gif]]
 
-Menos mal que hay copias de seguridad (... uhmm, hay copias, ¿no? Todo el mundo hace copias, ¿no?)
+Y borra el disco duro de forma completa. Menos mal que hay copias de seguridad ... uhmm, hay copias, ¿no? Todo el mundo hace copias, ¿no?
 
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
 
-[img[enfadado.gif]]</tw-passagedata><tw-passagedata pid="37" name="Comando" tags="" position="915,2338" size="100,100">&lt;&lt;set $puntos_previos = 5&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-El cursor parpadea en la línea de comandos. Sabes que tienes poco tiempo, a lo sumo para poner un comando para descubrir quién es el proceso que está enviado la información fuera del equipo y matarlo. ¿Qué comando escribes?
+</tw-passagedata><tw-passagedata pid="35" name="Comando" tags="" position="915,2338" size="100,100">&lt;&lt;puntuacion 5 &quot;Muy bien! Siempre se pueden superar los problemas ... o casi siempre&quot;&gt;&gt;
+El cursor parpadea en la línea de comandos. Sabes que tienes poco tiempo, a lo sumo para poner un comando para descubrir quién es el proceso que está enviado la información fuera del equipo y matarlo. 
 
 [img[comando.gif]]
 
+¿Qué comando escribes?
 [[ipconfig|FIN5]]
 [[netstat|FIN6]]
 [[arp|FIN5]]
-[[ping|FIN5]]</tw-passagedata><tw-passagedata pid="38" name="FIN5" tags="" position="765,2488" size="100,100">&lt;&lt;set $puntos_previos = -1&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
+[[ping|FIN5]]</tw-passagedata><tw-passagedata pid="36" name="FIN5" tags="" position="765,2488" size="100,100">&lt;&lt;puntuacion -5 &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;&gt;&gt;
 Escribes el comando de forma apresurada y Mensajín estalla en carcajadas:
-
-- ¿Qué tipo de comando es ese? En todo caso ya he subido toda la información al mi amo, el señor pirata y está haciendo cargos a todos los alumnos.
+- ¿Qué tipo de comando es ese? En todo caso ya he subido toda la información al mi amo, el señor pirata, y está aprobando Cálculo a todos los alumnos.
 
 Derrotado tu alejas del ordenador y lamentas no haber prestado más atención a las clases de redes :(
 
+[img[derrota.gif]]
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
 
-[img[derrota.gif]]</tw-passagedata><tw-passagedata pid="39" name="FIN6" tags="" position="915,2488" size="100,100">&lt;&lt;set $puntos_previos = 10&gt;&gt;&lt;&lt;set $current_level = passage()&gt;&gt;&lt;&lt;include &quot;Puntos&quot;&gt;&gt;
-Escribes el comando netstat -b en el terminal y te muestra todas las conexiones actuales del equipo. Con tu pericia adquirida durante la asignatura de Redes y Sistemas Distribuidos, rápidamente localizas una conexión extraña que es la que usa Mensajín para enviar la información. 
+</tw-passagedata><tw-passagedata pid="37" name="FIN6" tags="" position="915,2488" size="100,100">&lt;&lt;puntuacion 10 &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;&gt;&gt;
+Escribes el comando &quot;netstat -b&quot; en el terminal y te muestra todas las conexiones actuales del equipo. Con tu pericia adquirida durante la asignatura de Redes y Sistemas Distribuidos, rápidamente localizas una conexión extraña que es la que usa Mensajín para enviar la información. 
 
 Con otro comando matas al proceso. Ves como Mensajín empieza a desaparecer pero con sus últimos bytes consigue decir:
-
 - Lo siento por todo, me obligaron a hacerlo ... ¡gracias!
 
 Y desaparece.
 
 ¡Enhorabuena! Has conseguido mantener a salvo los datos de la UMA y ahora eres el héroe (en tu casa).
 
+[img[ganado.gif]]
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
 
-[img[ganado.gif]]</tw-passagedata></tw-storydata></div>
+</tw-passagedata><tw-passagedata pid="38" name="Puntuacion" tags="widget" position="865,265" size="100,100">&lt;&lt;widget &quot;puntuacion&quot;&gt;&gt;
+	\&lt;&lt;silently&gt;&gt;
+		&lt;&lt;if ndef $puntos&gt;&gt; &lt;&lt;set $puntos to 0&gt;&gt; &lt;&lt;/if&gt;&gt;
+		&lt;&lt;if ndef $escenas&gt;&gt; &lt;&lt;set $escenas to []&gt;&gt; &lt;&lt;/if&gt;&gt;
+		&lt;&lt;if ndef $args[0]&gt;&gt; 
+			&lt;&lt;set _p to 0&gt;&gt; 
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;set _p to $args[0]&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+		&lt;&lt;if ndef $args[1]&gt;&gt;
+			&lt;&lt;set _t to &quot;Sin comentarios!&quot;&gt;&gt;
+		&lt;&lt;else&gt;&gt;
+			&lt;&lt;set _t to $args[1]&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+		&lt;&lt;if !$escenas.includes(passage()) &gt;&gt;
+			&lt;&lt;set $escenas = $escenas.concatUnique(passage()) &gt;&gt;
+			&lt;&lt;set $puntos += _p&gt;&gt;
+			&lt;&lt;set _texto =  &quot;&lt;div data-balloon=\&quot;&quot;+ _t +&quot;\&quot; data-balloon-pos=\&quot;down\&quot; data-balloon-length=\&quot;fit\&quot; class=\&quot;&quot;&gt;&gt;
+			&lt;&lt;if _p &lt; 0&gt;&gt;
+				&lt;&lt;set _texto += &quot;pierde\&quot;&gt;&quot;&gt;&gt;
+			&lt;&lt;else&gt;&gt;
+				&lt;&lt;set _texto += &quot;gana\&quot; &gt;+&quot;&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+			&lt;&lt;set _texto += &quot;_p (?)&lt;/div&gt;&quot; &gt;&gt;
+			&lt;&lt;if _p == 0 &gt;&gt;
+				&lt;&lt;set _texto = &quot;&quot;&gt;&gt;
+			&lt;&lt;/if&gt;&gt;
+		&lt;&lt;/if&gt;&gt;
+	&lt;&lt;/silently&gt;&gt; &lt;&lt;print _texto &gt;&gt;\
+&lt;&lt;/widget&gt;&gt;</tw-passagedata></tw-storydata></div>
 	<script id="script-sugarcube" type="text/javascript">
 	/*! SugarCube JS */
 	if(document.documentElement.getAttribute("data-init")==="loading"){!function(window,document,jQuery,undefined){"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,r=Array(e.length);t<e.length;t++)r[t]=e[t];return r}return Array.from(e)}var _createClass=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}(),_slicedToArray=function(){function e(e,t){var r=[],n=!0,a=!1,i=undefined;try{for(var o,s=e[Symbol.iterator]();!(n=(o=s.next()).done)&&(r.push(o.value),!t||r.length!==t);n=!0);}catch(e){a=!0,i=e}finally{try{!n&&s.return&&s.return()}finally{if(a)throw i}}return r}return function(t,r){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,r);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Alert=function(){function e(e,t,r,n){var a="fatal"===e,i="Apologies! "+(a?"A fatal":"An")+" error has occurred.";i+=a?" Aborting.":" You may be able to continue, but some parts may not work properly.",null==t&&null==r||(i+="\n\nError",null!=t&&(i+=" ["+t+"]"),i+=null!=r?": "+r.replace(/^(?:(?:uncaught\s+(?:exception:\s+)?)?error:\s+)+/i,"")+".":": unknown error."),"object"===("undefined"==typeof n?"undefined":_typeof(n))&&n.stack&&(i+="\n\nStack Trace:\n"+n.stack),window.alert(i)}function t(t,r,n){e(null,t,r,n)}function r(t,r,n){e("fatal",t,r,n)}return function(e){window.onerror=function(n,a,i,o,s){"complete"===document.readyState?t(null,n,s):(r(null,n,s),window.onerror=e,"function"==typeof window.onerror&&window.onerror.apply(this,arguments))}}(window.onerror),Object.freeze(Object.defineProperties({},{error:{value:t},fatal:{value:r}}))}();!function(){function e(e,t){var a=String(e);switch(t){case"start":return a&&r.test(a)?a.replace(r,""):a;case"end":return a&&n.test(a)?a.replace(n,""):a;default:throw new Error('_trimFrom called with incorrect where parameter value: "'+t+'"')}}function t(e,t){var r=Number.parseInt(e,10)||0;if(r<1)return"";var n="undefined"==typeof t?"":String(t);for(""===n&&(n=" ");n.length<r;){var a=n.length,i=r-a;n+=a>i?n.slice(0,i):n}return n.length>r&&(n=n.slice(0,r)),n}var r=/^[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*/,n=/[\s\u00A0\uFEFF][\s\u00A0\uFEFF]*$/;Array.prototype.includes||Object.defineProperty(Array.prototype,"includes",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includes called on null or undefined");if(0===arguments.length)return!1;var e=this.length>>>0;if(0===e)return!1;var t=arguments[0],r=Number(arguments[1])||0;for(r<0&&(r=Math.max(0,e+r));r<e;++r){var n=this[r];if(t===n||t!==t&&n!==n)return!0}return!1}}),String.prototype.padStart||Object.defineProperty(String.prototype,"padStart",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padStart called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:t(i-a,r)+n}}),String.prototype.padEnd||Object.defineProperty(String.prototype,"padEnd",{configurable:!0,writable:!0,value:function(e,r){if(null==this)throw new TypeError("String.prototype.padEnd called on null or undefined");var n=String(this),a=n.length,i=Number.parseInt(e,10);return i<=a?n:n+t(i-a,r)}}),String.prototype.trimStart||Object.defineProperty(String.prototype,"trimStart",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimStart called on null or undefined");return e(this,"start")}}),String.prototype.trimLeft||Object.defineProperty(String.prototype,"trimLeft",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimLeft called on null or undefined");return e(this,"start")}}),String.prototype.trimEnd||Object.defineProperty(String.prototype,"trimEnd",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimEnd called on null or undefined");return e(this,"end")}}),String.prototype.trimRight||Object.defineProperty(String.prototype,"trimRight",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.trimRight called on null or undefined");return e(this,"end")}})}(),function(){function _random(){var e=void 0,t=void 0;switch(arguments.length){case 0:throw new Error("_random called with insufficient parameters");case 1:e=0,t=arguments[0];break;default:e=arguments[0],t=arguments[1]}if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.floor(_nativeMathRandom()*(t-e+1))+e}function _randomIndex(e,t){var r=void 0,n=void 0;switch(t.length){case 1:r=0,n=e-1;break;case 2:r=0,n=Math.trunc(t[1]);break;default:r=Math.trunc(t[1]),n=Math.trunc(t[2])}return Number.isNaN(r)?r=0:!Number.isFinite(r)||r>=e?r=e-1:r<0&&(r=e+r,r<0&&(r=0)),Number.isNaN(n)?n=0:!Number.isFinite(n)||n>=e?n=e-1:n<0&&(n=e+n,n<0&&(n=e-1)),_random(r,n)}function _getCodePointStartAndEnd(e,t){var r=e.charCodeAt(t);if(Number.isNaN(r))return{char:"",start:-1,end:-1};if(r<55296||r>57343)return{char:e.charAt(t),start:t,end:t};if(r>=55296&&r<=56319){var n=t+1;if(n>=e.length)throw new Error("high surrogate without trailing low surrogate");var a=e.charCodeAt(n);if(a<56320||a>57343)throw new Error("high surrogate without trailing low surrogate");return{char:e.charAt(t)+e.charAt(n),start:t,end:n}}if(0===t)throw new Error("low surrogate without leading high surrogate");var i=t-1,o=e.charCodeAt(i);if(o<55296||o>56319)throw new Error("low surrogate without leading high surrogate");return{char:e.charAt(i)+e.charAt(t),start:i,end:t}}var _nativeMathRandom=Math.random;Object.defineProperty(Array,"random",{configurable:!0,writable:!0,value:function(e){if(null==e||"object"!==("undefined"==typeof e?"undefined":_typeof(e))||!Object.prototype.hasOwnProperty.call(e,"length"))throw new TypeError("Array.random array parameter must be an array or array-lke object");var t=e.length>>>0;if(0!==t){var r=0===arguments.length?_random(0,t-1):_randomIndex(t,Array.prototype.slice.call(arguments,1));return e[r]}}}),Object.defineProperty(Array.prototype,"concatUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.concatUnique called on null or undefined");var t=Array.from(this);if(0===arguments.length)return t;var r=Array.prototype.reduce.call(arguments,function(e,t){return e.concat(t)},[]),n=r.length;if(0===n)return t;for(var a=Array.prototype.indexOf,i=Array.prototype.push,o=0;o<n;++o){var e=r[o];a.call(t,e)===-1&&i.call(t,e)}return t}}),Object.defineProperty(Array.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.count called on null or undefined");for(var e=Array.prototype.indexOf,t=arguments[0],r=Number(arguments[1])||0,n=0;(r=e.call(this,t,r))!==-1;)++n,++r;return n}}),Object.defineProperty(Array.prototype,"delete",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.delete called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.indexOf,r=Array.prototype.push,n=Array.prototype.splice,a=Array.prototype.concat.apply([],arguments),i=[],o=0,s=a.length;o<s;++o)for(var u=a[o],l=0;(l=t.call(this,u,l))!==-1;)r.apply(i,n.call(this,l,1));return i}}),Object.defineProperty(Array.prototype,"deleteAt",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.deleteAt called on null or undefined");if(0===arguments.length)return[];var e=this.length>>>0;if(0===e)return[];for(var t=Array.prototype.splice,r=[].concat(_toConsumableArray(new Set(Array.prototype.concat.apply([],arguments).map(function(t){return t<0?Math.max(0,e+t):t})).values())),n=[].concat(_toConsumableArray(r)).sort(function(e,t){return t-e}),a=[],i=0,o=r.length;i<o;++i)a[i]=this[r[i]];for(var s=0,u=n.length;s<u;++s)t.call(this,n[s],1);return a}}),Object.defineProperty(Array.prototype,"flatten",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.flatten called on null or undefined");return Array.prototype.reduce.call(this,function(e,t){return e.concat(Array.isArray(t)?t.flatten():t)},[])}}),Object.defineProperty(Array.prototype,"includesAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAll called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAll.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(!Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!1;return!0}}),Object.defineProperty(Array.prototype,"includesAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.includesAny called on null or undefined");if(1===arguments.length)return Array.isArray(arguments[0])?Array.prototype.includesAny.apply(this,arguments[0]):Array.prototype.includes.apply(this,arguments);for(var e=0,t=arguments.length;e<t;++e)if(Array.prototype.some.call(this,function(e){return e===this.val||e!==e&&this.val!==this.val},{val:arguments[e]}))return!0;return!1}}),Object.defineProperty(Array.prototype,"pluck",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.pluck called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return Array.prototype.splice.call(this,t,1)[0]}}}),Object.defineProperty(Array.prototype,"pluckMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.pluckMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.pluckMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=Array.prototype.splice,a=[],i=t-1;do a.push(n.call(this,_random(0,i--),1)[0]);while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"pushUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.pushUnique called on null or undefined");var t=arguments.length;if(0===t)return this.length>>>0;for(var r=Array.prototype.indexOf,n=Array.prototype.push,a=0;a<t;++a){var e=arguments[a];r.call(this,e)===-1&&n.call(this,e)}return this.length>>>0}}),Object.defineProperty(Array.prototype,"random",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.random called on null or undefined");var e=this.length>>>0;if(0!==e){var t=0===arguments.length?_random(0,e-1):_randomIndex(e,[].concat(Array.prototype.slice.call(arguments)));return this[t]}}}),Object.defineProperty(Array.prototype,"randomMany",{configurable:!0,writable:!0,value:function(e){if(null==this)throw new TypeError("Array.prototype.randomMany called on null or undefined");var t=this.length>>>0;if(0===t)return[];var r=Math.trunc(e);if(!Number.isInteger(r))throw new Error("Array.prototype.randomMany want parameter must be an integer");if(r<1)return[];r>t&&(r=t);var n=new Map,a=[],i=t-1;do{var o=void 0;do o=_random(0,i);while(n.has(o));n.set(o,!0),a.push(this[o])}while(a.length<r);return a}}),Object.defineProperty(Array.prototype,"shuffle",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.shuffle called on null or undefined");var e=this.length>>>0;if(0===e)return this;for(var t=e-1;t>0;--t){var r=Math.floor(_nativeMathRandom()*(t+1));if(t!==r){var n=this[t];this[t]=this[r],this[r]=n}}return this}}),Object.defineProperty(Array.prototype,"unshiftUnique",{configurable:!0,writable:!0,value:function e(){if(null==this)throw new TypeError("Array.prototype.unshiftUnique called on null or undefined");var t=arguments.length;if(0===t)return this.length>>>0;for(var r=Array.prototype.indexOf,n=Array.prototype.unshift,a=0;a<t;++a){var e=arguments[a];r.call(this,e)===-1&&n.call(this,e)}return this.length>>>0}}),Object.defineProperty(Function.prototype,"partial",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Function.prototype.partial called on null or undefined");var e=Array.prototype.slice,t=this,r=e.call(arguments,0);return function(){for(var n=[],a=0,i=0;i<r.length;++i)n.push(r[i]===undefined?arguments[a++]:r[i]);return t.apply(this,n.concat(e.call(arguments,a)))}}}),Object.defineProperty(Math,"clamp",{configurable:!0,writable:!0,value:function e(t,r,n){var e=Number(t);return Number.isNaN(e)?NaN:e.clamp(r,n)}}),Object.defineProperty(Math,"easeInOut",{configurable:!0,writable:!0,value:function(e){return 1-(Math.cos(Number(e)*Math.PI)+1)/2}}),Object.defineProperty(Number.prototype,"clamp",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Number.prototype.clamp called on null or undefined");if(2!==arguments.length)throw new Error("Number.prototype.clamp called with an incorrect number of parameters");var e=Number(arguments[0]),t=Number(arguments[1]);if(e>t){var r=[t,e];e=r[0],t=r[1]}return Math.min(Math.max(this,e),t)}}),RegExp.escape||!function(){var e=/[\\^$*+?.()|[\]{}]/g,t=new RegExp(e.source);Object.defineProperty(RegExp,"escape",{configurable:!0,writable:!0,value:function(r){var n=String(r);return n&&t.test(n)?n.replace(e,"\\$&"):n}})}(),function(){var e=/{(\d+)(?:,([+-]?\d+))?}/g,t=new RegExp(e.source);Object.defineProperty(String,"format",{configurable:!0,writable:!0,value:function(r){function n(e,t,r){if(!t)return e;var n=Math.abs(t)-e.length;if(n<1)return e;var a=String(r).repeat(n);return t<0?e+a:a+e}if(arguments.length<2)return 0===arguments.length?"":r;var a=2===arguments.length&&Array.isArray(arguments[1])?[].concat(_toConsumableArray(arguments[1])):Array.prototype.slice.call(arguments,1);return 0===a.length?r:t.test(r)?(e.lastIndex=0,r.replace(e,function(e,t,r){var i=a[t];if(null==i)return"";for(;"function"==typeof i;)i=i();switch("undefined"==typeof i?"undefined":_typeof(i)){case"string":break;case"object":i=JSON.stringify(i);break;default:i=String(i)}return n(i,r?Number.parseInt(r,10):0," ")})):r}})}(),Object.defineProperty(String.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.contains called on null or undefined");return String.prototype.indexOf.apply(this,arguments)!==-1}}),Object.defineProperty(String.prototype,"count",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.count called on null or undefined");var e=String(arguments[0]||"");if(""===e)return 0;for(var t=String.prototype.indexOf,r=e.length,n=Number(arguments[1])||0,a=0;(n=t.call(this,e,n))!==-1;)++a,n+=r;return a}}),Object.defineProperty(String.prototype,"splice",{configurable:!0,writable:!0,value:function(e,t,r){if(null==this)throw new TypeError("String.prototype.splice called on null or undefined");var n=this.length>>>0;if(0===n)return"";var a=Number(e);Number.isSafeInteger(a)?a<0&&(a+=n,a<0&&(a=0)):a=0,a>n&&(a=n);var i=Number(t);(!Number.isSafeInteger(i)||i<0)&&(i=0);var o=this.slice(0,a);return"undefined"!=typeof r&&(o+=r),a+i<n&&(o+=this.slice(a+i)),o}}),Object.defineProperty(String.prototype,"splitOrEmpty",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.splitOrEmpty called on null or undefined");return""===String(this)?[]:String.prototype.split.apply(this,arguments)}}),Object.defineProperty(String.prototype,"toLocaleUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toLocaleUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toLocaleUpperCase()+e.slice(n+1)}}),Object.defineProperty(String.prototype,"toUpperFirst",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.toUpperFirst called on null or undefined");var e=String(this),t=_getCodePointStartAndEnd(e,0),r=t.char,n=t.end;return n===-1?"":r.toUpperCase()+e.slice(n+1)}}),Object.defineProperty(Date.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:date)",this.toISOString()]}}),Object.defineProperty(Function.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)","("+this.toString()+")"]}}),Object.defineProperty(Map.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:map)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(RegExp.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:eval)",this.toString()]}}),Object.defineProperty(Set.prototype,"toJSON",{configurable:!0,writable:!0,value:function(){return["(revive:set)",[].concat(_toConsumableArray(this))]}}),Object.defineProperty(JSON,"reviveWrapper",{configurable:!0,writable:!0,value:function(e,t){if("string"!=typeof e)throw new TypeError("JSON.reviveWrapper code parameter must be a string");return["(revive:eval)",[e,t]]}}),Object.defineProperty(JSON,"_real_parse",{value:JSON.parse}),Object.defineProperty(JSON,"parse",{configurable:!0,writable:!0,value:function value(text,reviver){return JSON._real_parse(text,function(key,val){var value=val;if(Array.isArray(value)&&2===value.length)switch(value[0]){case"(revive:set)":value=new Set(value[1]);break;case"(revive:map)":value=new Map(value[1]);break;case"(revive:date)":value=new Date(value[1]);break;case"(revive:eval)":try{if(Array.isArray(value[1])){var $ReviveData$=value[1][1];value=eval(value[1][0])}else value=eval(value[1])}catch(e){}}else if("string"==typeof value&&"@@revive@@"===value.slice(0,10))try{value=eval(value.slice(10))}catch(e){}if("function"==typeof reviver)try{value=reviver(key,value)}catch(e){}return value})}}),Object.defineProperty(Array.prototype,"contains",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.contains called on null or undefined");return Array.prototype.includes.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAll",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAll called on null or undefined");return Array.prototype.includesAll.apply(this,arguments)}}),Object.defineProperty(Array.prototype,"containsAny",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("Array.prototype.containsAny called on null or undefined");return Array.prototype.includesAny.apply(this,arguments)}}),Object.defineProperty(String.prototype,"readBracketedList",{configurable:!0,writable:!0,value:function(){if(null==this)throw new TypeError("String.prototype.readBracketedList called on null or undefined");for(var e=new RegExp("(?:\\[\\[((?:\\s|\\S)*?)\\]\\])|([^\"'\\s]\\S*)","gm"),t=[],r=void 0;null!==(r=e.exec(this));)r[1]?t.push(r[1]):r[2]&&t.push(r[2]);return t}})}();var Browser=function(){var e=navigator.userAgent.toLowerCase(),t=e.includes("windows phone"),r=Object.freeze({Android:!t&&e.includes("android"),BlackBerry:/blackberry|bb10/.test(e),iOS:!t&&/ip(?:hone|ad|od)/.test(e),Windows:t||e.includes("iemobile"),any:function(){return r.Android||r.BlackBerry||r.iOS||r.Windows}}),n=!r.Windows&&!/khtml|trident|edge/.test(e)&&e.includes("gecko"),a=!e.includes("opera")&&/msie|trident/.test(e),i=a?function(){var t=/(?:msie\s+|rv:)(\d+\.\d)/.exec(e);return t?Number(t[1]):0}():null,o=e.includes("opera")||e.includes(" opr/"),s=o?function(){var t=new RegExp((/khtml|chrome/.test(e)?"opr":"version")+"\\/(\\d+\\.\\d+)"),r=t.exec(e);return r?Number(r[1]):0}():null;return Object.freeze({userAgent:e,isMobile:r,isGecko:n,isIE:a,ieVersion:i,isOpera:o,operaVersion:s})}(),Has=function(){var e=function(){try{return"function"==typeof document.createElement("audio").canPlayType}catch(e){}return!1}(),t=function(){try{return"Blob"in window&&"File"in window&&"FileList"in window&&"FileReader"in window&&!Browser.isMobile.any()&&(!Browser.isOpera||Browser.operaVersion>=15)}catch(e){}return!1}(),r=function(){try{return"geolocation"in navigator&&"function"==typeof navigator.geolocation.getCurrentPosition&&"function"==typeof navigator.geolocation.watchPosition}catch(e){}return!1}(),n=function(){try{return"MutationObserver"in window&&"function"==typeof window.MutationObserver}catch(e){}return!1}(),a=function(){try{return"performance"in window&&"function"==typeof window.performance.now}catch(e){}return!1}();return Object.freeze({audio:e,fileAPI:t,geolocation:r,mutationObserver:n,performance:a})}(),_ref3=function(){function e(t){if("object"!==("undefined"==typeof t?"undefined":_typeof(t))||null==t)return t;if("function"==typeof t.clone)return t.clone(!0);if(t.nodeType&&"function"==typeof t.cloneNode)return t.cloneNode(!0);var r=void 0;return Array.isArray(t)?r=[]:t instanceof Date?r=new Date(t.getTime()):t instanceof Map?(r=new Map,t.forEach(function(t,n){r.set(n,e(t))})):t instanceof RegExp?r=new RegExp(t):t instanceof Set?(r=new Set,t.forEach(function(t){r.add(e(t))})):r=Object.create(Object.getPrototypeOf(t)),Object.keys(t).forEach(function(n){return r[n]=e(t[n])}),r}function t(e){for(var t=document.createDocumentFragment(),r=document.createElement("p"),n=void 0;null!==(n=e.firstChild);){if(n.nodeType===Node.ELEMENT_NODE){var a=n.nodeName.toUpperCase();switch(a){case"BR":if(null!==n.nextSibling&&n.nextSibling.nodeType===Node.ELEMENT_NODE&&"BR"===n.nextSibling.nodeName.toUpperCase()){e.removeChild(n.nextSibling),e.removeChild(n),t.appendChild(r),r=document.createElement("p");continue}if(!r.hasChildNodes()){e.removeChild(n);continue}break;case"ADDRESS":case"ARTICLE":case"ASIDE":case"BLOCKQUOTE":case"CENTER":case"DIV":case"DL":case"FIGURE":case"FOOTER":case"FORM":case"H1":case"H2":case"H3":case"H4":case"H5":case"H6":case"HEADER":case"HR":case"MAIN":case"NAV":case"OL":case"P":case"PRE":case"SECTION":case"TABLE":case"UL":r.hasChildNodes()&&(t.appendChild(r),r=document.createElement("p")),t.appendChild(n);continue}}r.appendChild(n)}r.hasChildNodes()&&t.appendChild(r),e.appendChild(t)}function r(){try{return document.activeElement||null}catch(e){return null}}function n(e,t,r){var n="object"===("undefined"==typeof e?"undefined":_typeof(e))?e:document.getElementById(e);if(null==n)return null;var a=Array.isArray(t)?t:[t];jQuery(n).empty();for(var i=0,o=a.length;i<o;++i)if(Story.has(a[i]))return new Wikifier(n,Story.get(a[i]).processText().trim()),n;if(null!=r){var s=String(r).trim();""!==s&&new Wikifier(n,s)}return n}function a(e,t,r){return jQuery(document.createElement("span")).addClass("error").attr("title",r).text(L10n.get("errorTitle")+": "+(t||"unknown error")).appendTo(e),!1}function i(e,t){var r=i;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":if(Number.isNaN(e))return t;break;case"object":if(null===e)return t;if(Array.isArray(e))return e.map(function(e){return r(e,t)}).join(", ");if(e instanceof Set)return[].concat(_toConsumableArray(e)).map(function(e){return r(e,t)}).join(", ");if(e instanceof Map){var n=[].concat(_toConsumableArray(e)).map(function(e){return r(e[0],t)+" ⇒ "+r(e[1],t)}).join("; ");return"( "+n+" )"}return e instanceof Date?e.toLocaleString():"function"==typeof e.toString?e.toString():Object.prototype.toString.call(e);case"function":case"undefined":return t}return String(e)}return Object.freeze(Object.defineProperties({},{clone:{value:e},convertBreaks:{value:t},safeActiveElement:{value:r},setPageElement:{value:n},throwError:{value:a},toStringOrDefault:{value:i}}))}(),clone=_ref3.clone,convertBreaks=_ref3.convertBreaks,safeActiveElement=_ref3.safeActiveElement,setPageElement=_ref3.setPageElement,throwError=_ref3.throwError,toStringOrDefault=_ref3.toStringOrDefault;!function(){function e(e){13!==e.which&&32!==e.which||(e.preventDefault(),jQuery(safeActiveElement()||this).trigger("click"))}function t(e){return function(){var t=jQuery(this);t.is("[aria-pressed]")&&t.attr("aria-pressed","true"===t.attr("aria-pressed")?"false":"true"),e.apply(this,arguments)}}function r(e){return t(function(){jQuery(this).off(".aria-clickable").removeAttr("tabindex aria-controls aria-pressed").not("a,button").removeAttr("role").end().filter("button").prop("disabled",!0),e.apply(this,arguments)})}jQuery.fn.extend({ariaClick:function(n,a){if(0===this.length||0===arguments.length)return this;var i=n,o=a;return null==o&&(o=i,i=undefined),i=jQuery.extend({namespace:undefined,one:!1,selector:undefined,data:undefined,controls:undefined,pressed:undefined,label:undefined},i),"string"!=typeof i.namespace?i.namespace="":"."!==i.namespace[0]&&(i.namespace="."+i.namespace),"boolean"==typeof i.pressed&&(i.pressed=i.pressed?"true":"false"),this.filter("button").prop("type","button"),this.not("a,button").attr("role","button"),this.attr("tabindex",0),null!=i.controls&&this.attr("aria-controls",i.controls),null!=i.pressed&&this.attr("aria-pressed",i.pressed),null!=i.label&&this.attr({"aria-label":i.label,title:i.label}),this.not("button").on("keypress.aria-clickable"+i.namespace,i.selector,e),this.on("click.aria-clickable"+i.namespace,i.selector,i.data,i.one?r(o):t(o)),this}})}(),function(){jQuery.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0!==r.length){var a=document.createDocumentFragment();r.forEach(function(t){return new Wikifier(a,t,e)});var i=[].concat(_toConsumableArray(a.querySelectorAll(".error"))).map(function(e){return e.textContent.replace(/^(?:(?:Uncaught\s+)?Error:\s+)+/,"")});if(i.length>0)throw new Error(i.join("; "))}},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];this.wikiWithOptions.apply(this,[undefined].concat(t))}}),jQuery.fn.extend({wikiWithOptions:function(e){for(var t=arguments.length,r=Array(t>1?t-1:0),n=1;n<t;n++)r[n-1]=arguments[n];if(0===this.length||0===r.length)return this;var a=document.createDocumentFragment();return r.forEach(function(t){return new Wikifier(a,t,e)}),this.append(a),this},wiki:function(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return this.wikiWithOptions.apply(this,[undefined].concat(t))}})}();var Util=function(){function e(e){return Object.freeze(Object.assign(Object.create(null),e))}function t(e){return Object.prototype.toString.call(e).slice(8,-1)}function r(e){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"number":t=e;break;case"string":t=Number(e);break;default:return!1}return!Number.isNaN(t)&&Number.isFinite(t)}function n(e){return"boolean"==typeof e||"string"==typeof e&&("true"===e||"false"===e)}function a(e){return String(e).trim().replace(/[^\w\s\u2013\u2014-]+/g,"").replace(/[_\s\u2013\u2014-]+/g,"-").toLocaleLowerCase()}function i(e){if(null==e)return"";var t=String(e);return t&&h.test(t)?t.replace(p,function(e){return g[e]}):t}function o(e){if(null==e)return"";var t=String(e);return t&&y.test(t)?t.replace(m,function(e){return v[e.toLowerCase()]}):t}function s(e,t){var r=String(e),n=Math.trunc(t),a=r.charCodeAt(n);if(Number.isNaN(a))return{char:"",start:-1,end:-1};var i={char:r.charAt(n),start:n,end:n};if(a<55296||a>57343)return i;if(a>=55296&&a<=56319){var o=n+1;if(o>=r.length)return i;var s=r.charCodeAt(o);return s<56320||s>57343?i:(i.char=i.char+r.charAt(o),i.end=o,i)}if(0===n)return i;var u=n-1,l=r.charCodeAt(u);return l<55296||l>56319?i:(i.char=r.charAt(u)+i.char,i.start=u,i)}function u(){return(Has.performance?performance:Date).now()}function l(e){var t=/^([+-]?(?:\d*\.)?\d+)([Mm]?[Ss])$/,r=t.exec(String(e));if(null===r)throw new SyntaxError('invalid time value syntax: "'+e+'"');var n=Number(r[1]);if(/^[Ss]$/.test(r[2])&&(n*=1e3),Number.isNaN(n)||!Number.isFinite(n))throw new RangeError('invalid time value: "'+e+'"');return n}function c(e){if("number"!=typeof e||Number.isNaN(e)||!Number.isFinite(e)){var t=void 0;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":t='"'+e+'"';break;case"number":t=String(e);break;default:t=Object.prototype.toString.call(e)}throw new Error("invalid milliseconds: "+t)}return e+"ms"}function d(e){if(!e.includes("-"))switch(e){case"bgcolor":return"backgroundColor";case"float":return"cssFloat";default:return e}var t="-ms-"===e.slice(0,4)?e.slice(1):e;return t.split("-").map(function(e,t){return 0===t?e:e.toUpperFirst()}).join("")}function f(e){var t=document.createElement("a"),r=Object.create(null);t.href=e,t.search&&t.search.replace(/^\?/,"").splitOrEmpty(/(?:&(?:amp;)?|;)/).forEach(function(e){var t=e.split("="),n=_slicedToArray(t,2),a=n[0],i=n[1];r[a]=i});var n=t.host&&"/"!==t.pathname[0]?"/"+t.pathname:t.pathname;return{href:t.href,protocol:t.protocol,host:t.host,hostname:t.hostname,port:t.port,path:""+n+t.search,pathname:n,query:t.search,search:t.search,queries:r,searches:r,hash:t.hash}}var p=/[&<>"'`]/g,h=new RegExp(p.source),g=Object.freeze({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"}),m=/&(?:amp|#38|#x26|lt|#60|#x3c|gt|#62|#x3e|quot|#34|#x22|apos|#39|#x27|#96|#x60);/gi,y=new RegExp(m.source,"i"),v=Object.freeze({"&amp;":"&","&#38;":"&","&#x26;":"&","&lt;":"<","&#60;":"<","&#x3c;":"<","&gt;":">","&#62;":">","&#x3e;":">","&quot;":'"',"&#34;":'"',"&#x22;":'"',"&apos;":"'","&#39;":"'","&#x27;":"'","&#96;":"`","&#x60;":"`"});return Object.freeze(Object.defineProperties({},{toEnum:{value:e},toStringTag:{value:t},isNumeric:{value:r},isBoolean:{value:n},slugify:{value:a},escape:{value:i},unescape:{value:o},charAndPosAt:{value:s},fromCssTime:{value:l},toCssTime:{value:c},fromCssProperty:{value:d},parseUrl:{value:f},now:{value:u},random:{value:Math.random},entityEncode:{value:i},entityDecode:{value:o},evalExpression:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}},evalStatements:{value:function(){return Scripting.evalJavaScript.apply(Scripting,arguments)}}}))}(),SimpleAudio=function(){function e(){return g}function t(e){g=!!e,l("mute",g)}function r(){return p}function n(e){p=Math.clamp(e,.2,5),l("rate",p)}function a(){return h}function i(e){h=Math.clamp(e,0,1),l("volume",h)}function o(){l("stop")}function s(e,t){if("function"!=typeof t)throw new Error("callback parameter must be a function");f.set(e,t)}function u(e){f.delete(e)}function l(e,t){f.forEach(function(r){return r(e,t)})}function c(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(m,[null].concat(t)))}function d(){for(var e=arguments.length,t=Array(e),r=0;r<e;r++)t[r]=arguments[r];return new(Function.prototype.bind.apply(y,[null].concat(t)))}var f=new Map,p=1,h=1,g=!1,m=function(){function e(t){if(_classCallCheck(this,e),Array.isArray(t))this._create(t);else{if(!(t instanceof e))throw new Error("sources parameter must be an array of either URLs or source objects");this._copy(t)}}return _createClass(e,[{key:"_create",value:function(t){if(!Array.isArray(t)||0===t.length)throw new Error("sources parameter must be an array of either URLs or source objects");var r=/^data:\s*audio\/([^;,]+)\s*[;,]/i,n=/\.([^.\/\\]+)$/,a=e.getType,i=[],o=document.createElement("audio");if(t.forEach(function(e){var t=null;switch("undefined"==typeof e?"undefined":_typeof(e)){case"string":var s=void 0;if("data:"===e.slice(0,5)){if(s=r.exec(e),null===s)throw new Error("source data URI missing media type")}else if(s=n.exec(Util.parseUrl(e).pathname),null===s)throw new Error("source URL missing file extension");var u=a(s[1]);null!==u&&(t={src:e,type:u});break;case"object":if(null===e)throw new Error("source object cannot be null");if(!e.hasOwnProperty("src"))throw new Error('source object missing required "src" property');
