@@ -494,7 +494,7 @@ button[data-balloon] {
 
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.history.controls = false;
-$("#menu-item-saves").remove();</script><tw-tag name="widget" color="red"></tw-tag><tw-tag name="UIBar" color="orange"></tw-tag><tw-tag name="data" color="yellow"></tw-tag><tw-tag name="final" color="blue"></tw-tag><tw-tag name="especiales" color="green"></tw-tag><tw-tag name="historria" color="purple"></tw-tag><tw-passagedata pid="1" name="Inicio" tags="historria" position="850,400" size="100,100">Aunque deberías estar haciendo cosas más importantes, estás procastinando por el ordenador y de repente sientes que alguien te tira de manga.
+$("#menu-item-saves").remove();</script><tw-tag name="widget" color="red"></tw-tag><tw-tag name="UIBar" color="orange"></tw-tag><tw-tag name="data" color="yellow"></tw-tag><tw-tag name="final" color="blue"></tw-tag><tw-tag name="especiales" color="green"></tw-tag><tw-tag name="historia" color="purple"></tw-tag><tw-passagedata pid="1" name="Inicio" tags="historia" position="800,400" size="100,100">Aunque deberías estar haciendo cosas más importantes, estás procastinando por el ordenador y de repente sientes que alguien te tira de manga.
 
 Al volverte, ves un pequeño mensaje HTTP que te mira con cara suplicante y te dice de forma entrecortada:
 - //¡Ho-ola! Me he perdido, ¿puedes ayudarme?//
@@ -503,7 +503,7 @@ Al volverte, ves un pequeño mensaje HTTP que te mira con cara suplicante y te d
 
 [[Sí, claro|TCPoUDP]]
 [[No, estoy ocupado haciendo nada|Conciencia]]
-&lt;&lt;button &quot;Reiniciar logros&quot; &quot;Inicio&quot;&gt;&gt;&lt;&lt;set $logros to []&gt;&gt;&lt;&lt;set $finales to []&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="TCPoUDP" tags="" position="721,541" size="100,100">&lt;&lt;puntuacion 5 &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;&gt;&gt;
+&lt;&lt;button &quot;Reiniciar logros&quot; &quot;Inicio&quot;&gt;&gt;&lt;&lt;set $logros to []&gt;&gt;&lt;&lt;set $finales to []&gt;&gt;&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="TCPoUDP" tags="historia" position="725,525" size="100,100">&lt;&lt;puntuacion 5 &quot;Así me gusta con inquietudes y ganas de ayudar! :)&quot;&gt;&gt;
 El header del mensaje HTTP se ilumina de alegría:
 - ¡Muchísimas gracias! Vi a mis amigos ir por este camino.
 
@@ -514,12 +514,12 @@ Le sigues hasta que te encuentras con una muralla con dos puertas. En una de ell
 
 [[TCP]]
 [[UDP]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="3" name="Conciencia" tags="" position="935,545" size="100,100">&lt;&lt;puntuacion -1 &quot;Hay que ser buena gente! :P&quot;&gt;&gt;
-Aunque estás tentado a abandonarlo, finalmente tu buena conciencia puede contigo y decides ayudarlo
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="3" name="Conciencia" tags="historia" position="875,525" size="100,100">&lt;&lt;puntuacion -1 &quot;Hay que ser buena gente! :P&quot;&gt;&gt;
+Aunque estás tentado a abandonarlo, finalmente tu buena conciencia puede contigo y decides ayudarlo.
 
 [img[enredados/img/conciencia.gif]]
 
-[[Sí, te ayudaré|TCPoUDP]]</tw-passagedata><tw-passagedata pid="4" name="TCP" tags="" position="675,675" size="100,100">&lt;&lt;puntuacion 5 &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;&gt;&gt;
+[[Sí, te ayudaré|TCPoUDP]]</tw-passagedata><tw-passagedata pid="4" name="TCP" tags="historia" position="650,650" size="100,100">&lt;&lt;puntuacion 5 &quot;TCP es un protocolo orientado a la conexión y fiable, asegurando que las cosas llegan bien y en orden. ¡Justo lo que necesita HTTP!&quot;&gt;&gt;
 &lt;&lt;if ndef $tcp&gt;&gt;&lt;&lt;set $tcp to 0&gt;&gt;Al entrar ves que la confianza de mensajín aumenta y te dice:
 - ¡Sí! Es por aquí, esto me suena.
 
@@ -540,7 +540,7 @@ Mensajín (o ya Segmentín) te dice:
 [[¿80?|PUERTO]]
 [[¿250.250.250.10?|EXPERIMENTAL]]
 [[¿10.0.0.10?|PRIVADA]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="5" name="UDP" tags="final" position="950,675" size="100,100">&lt;&lt;puntuacion -5 &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="5" name="UDP" tags="final" position="800,650" size="100,100">&lt;&lt;puntuacion -5 &quot;UDP es un protocolo no orientado a la conexión y no fiable (no asegura que los mensajes lleguen ni su orden). Se usa para protocolos de pregunta/respuesta simple, donde se requiera multicast (envío a muchos), o donde pequeñas pérdidas no sean relevante (multimedia). HTTP (las versiones actuales) requieren un protocolo fiable para que los recursos se descarguen de forma correcta y sin errores (TCP)&quot;&gt;&gt;
 Nada más atravesar la puerta, sientes que la oscuridad te rodea. Una vez que tu vista se acostumbras ves que estás rodeado de unos datagramas UDP con mala pinta que te dicen:
 - ¡Vamos a enseñarle porqué UDP es un servicio no fiable!
 
@@ -549,7 +549,7 @@ Aunque intentas huir, ves que Mensajín está rodeado y sin vía de escape. Para
 [img[enredados/img/spiderman.gif]]
 !FIN
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot;&gt;&gt; \
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="6" name="URL" tags="" position="400,850" size="100,100">&lt;&lt;puntuacion -1 &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="6" name="URL" tags="historia" position="400,800" size="100,100">&lt;&lt;puntuacion -1 &quot;Una URL es un identificador de un sitio, pero solo se usa a alto nivel (protocolos de nivel de aplicación), a más bajo nivel (IP) no le vale y prefieren direcciones de longitud fija y numérica&quot;&gt;&gt;
 El funcionario te mira con cara extraña y te dice:
 - No entiendo URLs, yo solo trabajo con números.
 
@@ -557,7 +557,7 @@ El funcionario te mira con cara extraña y te dice:
 
 [[Intentar otra|TCP]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="7" name="IP" tags="" position="560,845" size="100,100">&lt;&lt;puntuacion 5 &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca unívocamente a un equipo&quot;&gt;&gt;
+&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="7" name="IP" tags="historia" position="550,800" size="100,100">&lt;&lt;puntuacion 5 &quot;Una IP (v4) es una dirección de 4 bytes (representada habitualmeente como A.B.C.D) que identiifca unívocamente a un equipo&quot;&gt;&gt;
 El funcionario asiente, rellena un formulario de tipo I.P.H.E.A.D.E.R y te lo pasa.
 
 Mensajín te mira con veneración:
@@ -567,15 +567,15 @@ Mensajín te mira con veneración:
 
 [[Un mago no revela sus secretos|ENLACE]]
 [[Mi amigo DNS me ayudó|DNS]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="8" name="MAC" tags="" position="700,850" size="100,100">&lt;&lt;puntuacion -1 &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="8" name="MAC" tags="historia" position="700,800" size="100,100">&lt;&lt;puntuacion -1 &quot;Una dirección MAC tiene 48 bits (normalmente expresada como xx:xx:xx:xx:xx:xx donde x es un dígito hexadecimal) que identifican a un interfaz de red y es usado por la capa de enlace para sus comunicaciones (pero no por la capa de red)&quot;&gt;&gt;
 El funcionario te mira con cara extraña y te dice:
-- Eso tiene muchos números, ¿no me estarás diciendo una dirección MAC en vez de una IP?.
+- Eso tiene muchos números, ¿no me estarás diciendo una dirección MAC en vez de una IP?
 
 [img[enredados/img/no.gif]]
 
 [[Intentar otra|TCP]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="9" name="PUERTO" tags="" position="850,850" size="100,100">&lt;&lt;puntuacion -1 &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;&gt;&gt;
+&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="9" name="PUERTO" tags="historia" position="850,800" size="100,100">&lt;&lt;puntuacion -1 &quot;Un puerto es un número de 16 bits usado por la capa de transporte para identificar el proceso/servicio facilitado&quot;&gt;&gt;
 El funcionario te mira con cara extraña y te dice:
 - Eso tiene pocos números, ¿no te estarás confundiendo con el puerto?
 
@@ -583,7 +583,7 @@ El funcionario te mira con cara extraña y te dice:
 
 [[Intentar otra|TCP]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="10" name="PRIVADA" tags="" position="1000,850" size="100,100">&lt;&lt;puntuacion -1 &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;&gt;&gt;
+&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="10" name="PRIVADA" tags="historia" position="1000,800" size="100,100">&lt;&lt;puntuacion -1 &quot;Hay ciertas direcciones IP llamadas privadas (por ejemplo la 10.X.Y.Z o las 192.168.X.Y) que están reservadas para que las puedas asignar en tu red sin solicitarlas pero al como seguro que están siendo utilizadas en múltiples lugares, no sirven para navegar por Internet&quot;&gt;&gt;
 El funcionario te mira con cara extraña y te dice:
 - Uhmmm... tras consultar mis registros me comentan que esa dirección no te vale para visitar sitios externos.
 
@@ -591,7 +591,7 @@ El funcionario te mira con cara extraña y te dice:
 
 [[Intentar otra|TCP]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="11" name="ENLACE" tags="" position="554,1140" size="100,100">Tras enseñar el formulario en el control fronterizo, entras sin problemas.
+&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="11" name="ENLACE" tags="historia" position="625,950" size="100,100">Tras enseñar el formulario en el control fronterizo, entras sin problemas.
 
 Por fin ves la salida del equipo. Al acercarte, observas un cartel que pone &quot;Elija el vehículo adecuado para salir del equipo&quot;. Te asomas al garaje cercano y ves dos tipos de vehículos: &quot;WIFIplane&quot; y &quot;ETHERNETcar&quot;. 
 
@@ -603,7 +603,7 @@ Mensajín te comenta:
 ¿Cuál seleccionas?
 [[WIFIplane]]
 [[ETHERNETcar]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="12" name="EXPERIMENTAL" tags="" position="1137,849" size="100,100">&lt;&lt;puntuacion -1 &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="12" name="EXPERIMENTAL" tags="historia" position="250,800" size="100,100">&lt;&lt;puntuacion -1 &quot;Las IP a partir de la 240.0.0.0 son de clase E y se usan para experimental, no siendo válidas para navegar por Internet&quot;&gt;&gt;
 El funcionario te mira con cara extrañada y te dice:
 - Uhmmm... tras consultar mis registros me comentan que esa IP no existe.
 
@@ -611,7 +611,7 @@ El funcionario te mira con cara extrañada y te dice:
 
 [[Intentar otra|TCP]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="13" name="DNS" tags="" position="450,995" size="100,100">&lt;&lt;puntuacion 5 &quot;DNS es un protocolo que permite la conviersión de URL a IP&quot;&gt;&gt;
+&lt;&lt;set $errorDir to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="13" name="DNS" tags="historia" position="475,950" size="100,100">&lt;&lt;puntuacion 5 &quot;DNS es un protocolo que permite la conviersión de URL a IP&quot;&gt;&gt;
 Le empiezas a explicar:
 - DNS es un sistema que nos permite convertir URL a IP. Para ello envía un mensaje DNS QUERY usando UDP ...
 
@@ -621,7 +621,7 @@ Pero tras ver que Mensajín empieza a poner la misma cara que pones cuando el pr
 [img[enredados/img/aburrido.gif]]
 
 [[Avanzar al puesto fronterizo|ENLACE]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="14" name="WIFIplane" tags="" position="479,1290" size="100,100">&lt;&lt;puntuacion 4 &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado como Ethernet&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="14" name="WIFIplane" tags="historia" position="475,1100" size="100,100">&lt;&lt;puntuacion 4 &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado como Ethernet&quot;&gt;&gt;
 Decides coger el WIFIplane aunque al mirar al cielo, no estás seguro de que tu elección fuese la mejor (hay tormenta que causa interferencias, muchos aviones volando, además de otras cosas que rezas que sean pájaros, ...).
 
 Aparentemente el avión funciona de forma automática ya que no tiene controles, solo dos botones llamados &quot;CTS&quot; y &quot;RTS&quot;. 
@@ -631,7 +631,7 @@ Aparentemente el avión funciona de forma automática ya que no tiene controles,
 ¿Cuál pulsarás?
 [[RTS]]
 [[CTS]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="15" name="ETHERNETcar" tags="" position="751,1298" size="100,100">&lt;&lt;puntuacion 5 &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado como Ethernet&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="15" name="ETHERNETcar" tags="historia" position="775,1100" size="100,100">&lt;&lt;puntuacion 5 &quot;Tanto la wifi como el cable (Ethernet) son medios de comunicación por difusión. Ambos puedes alcanzar grandes velocidades de transmisión, pero la wifi es más sensible a elementos externos ya que no tiene un medio de transmisión guiado como Ethernet&quot;&gt;&gt;
 Decides coger el coche que parece más fiable y sencillo de conducir.
 
 La salida del garaje para incorportarte a la carretera tiene una visibilidad mínima, apenas distingues los coches que están pasando por la incorporación.
@@ -642,27 +642,27 @@ Hay varios coches similares al que conduces pasando por la carretera. Tras esper
 
 [[Te lanzas a la carretera|CARRETERA]]
 [[No te fías, mejor esperar un poco|PRECAUCION]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="16" name="RTS" tags="" position="525,1450" size="100,100">&lt;&lt;puntuacion 1 &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="16" name="RTS" tags="historia" position="550,1250" size="100,100">&lt;&lt;puntuacion 1 &quot;Este tipo de trama es usada en la wifi y significa Request to Send. Sirve para informar al otro extremo que quieres enviarle información&quot;&gt;&gt;
 Al pulsar el botón &quot;RTS&quot; ves que envías un mensaje a la torre de control para solicitar despegar y al acabo de un rato te confirman con  una trama CTS que puedes despegar.
 
 [img[enredados/img/desconocido.gif]]
 
 El WIFIplane emprende el vuelo llevándote a lo desconocido
 [[Ir a lo desconocido|ROUTER]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="17" name="CTS" tags="" position="370,1446" size="100,100">&lt;&lt;puntuacion -1 &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="17" name="CTS" tags="historia" position="400,1250" size="100,100">&lt;&lt;puntuacion -1 &quot;Este tipo de trama es usada en la wifi y significa Clear To Send. Sirve para indicar al otro extremo que puede enviar. Se genera en respuesta de la trama RTS&quot;&gt;&gt;
 Pulsas &quot;CTS&quot; lo que provoca que lances una señal, pero tras esperar no ocurre nada.
 
 [img[enredados/img/CTS.gif]]
 
 [[Decides pulsar RTS|RTS]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="18" name="ROUTER" tags="" position="625,1600" size="100,100">Realizas un viaje alucinante a traves de la RED intelestelar donde has visto cosas que vosotros no creeríais. Atacar naves en llamas más allá de Orión. Has visto rayos-C brillar en la oscuridad ... (paro para no aburrir y que no pidan derechos de autor).
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="18" name="ROUTER" tags="historia" position="625,1400" size="100,100">Realizas un viaje alucinante a traves de la RED intelestelar donde has visto cosas que vosotros no creeríais. Atacar naves en llamas más allá de Orión. Has visto rayos-C brillar en la oscuridad ... (paro para no aburrir y que no pidan derechos de autor).
 
 [img[enredados/img/router.gif]]
 
 El caso es que llegas a una estación intelestelar enorme llamada ROUTER.
 
 [[Entrar en el ROUTER|Error]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="19" name="CARRETERA" tags="" position="676,1446" size="100,100">&lt;&lt;puntuacion 1 &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="19" name="CARRETERA" tags="historia" position="700,1250" size="100,100">&lt;&lt;puntuacion 1 &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;&gt;&gt;
 Aprietas el accelerador y aunque estás a punto de llevarte otro coche por delante, te incorporas a la carretera. Nadie pita ni nada, parece que es la forma normal de entrar en la carretera.
 
 [img[enredados/img/incorporacion.gif]]
@@ -670,13 +670,13 @@ Aprietas el accelerador y aunque estás a punto de llevarte otro coche por delan
 No ves el final de la carretera que se pierde en en el horizonte. ¿Qué te esperará más allá?
 
 [[Ir a lo desconocido|ROUTER]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="20" name="PRECAUCION" tags="" position="868,1441" size="100,100">&lt;&lt;puntuacion -1 &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="20" name="PRECAUCION" tags="historia" position="850,1250" size="100,100">&lt;&lt;puntuacion -1 &quot;Ethernet usa un mecanismo de acceso al medio 1-persistente, que indica que nada más ver el canal disponible, intentará enviar&quot;&gt;&gt;
 Siguiendo tu valentía habitual, esperas un momento y ves que los coches no paran de pasar y que los periodos sin coches siempre son pequeños, así que hay que asumir el riesgo.
 
 [img[enredados/img/cobarde.gif]]
 
 [[Te lanzas a la carretera|CARRETERA]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="21" name="marcador" tags="widget" position="450,525" size="100,100">&lt;&lt;widget &quot;updatescoreboard&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="21" name="marcador" tags="widget" position="450,450" size="100,100">&lt;&lt;widget &quot;updatescoreboard&quot;&gt;&gt;
 	\&lt;&lt;silently&gt;&gt;
 
 		/% Add the current name and score to the end of the array. %/
@@ -705,14 +705,14 @@ Siguiendo tu valentía habitual, esperas un momento y ves que los coches no para
 			&lt;&lt;/for&gt;&gt;
 			&lt;/table&gt;
 	&lt;&lt;/nobr&gt;&gt;\
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Clasificacion" tags="especiales" position="575,275" size="100,100">&lt;&lt;updatescoreboard&gt;&gt;\
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="Clasificacion" tags="especiales" position="575,200" size="100,100">&lt;&lt;updatescoreboard&gt;&gt;\
 ¡Felicidades $playerName! Has conseguido $puntos puntos (de 51).
 
 !Clasificación:
 &lt;&lt;showscoreboard&gt;&gt;
 &lt;&lt;button &quot;Volver a intentarlo&quot;&gt;&gt;
 	&lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt;
-&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Error" tags="" position="615,1738" size="100,100">&lt;&lt;if ndef $error&gt;&gt;&lt;&lt;set $error=true&gt;&gt;Nada más entrar en la estación, te pasan a una zona de cuarentena para ver si estás bien (desde tu posición ves que a los que detectan algún problema los expulsan sin compasión).
+&lt;&lt;/button&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Error" tags="historia" position="625,1550" size="100,100">&lt;&lt;if ndef $error&gt;&gt;&lt;&lt;set $error=true&gt;&gt;Nada más entrar en la estación, te pasan a una zona de cuarentena para ver si estás bien (desde tu posición ves que a los que detectan algún problema los expulsan sin compasión).
 
 Se te acerca un enfermero y te pregunta:&lt;&lt;/if&gt;&gt;
 
@@ -726,7 +726,7 @@ Se te acerca un enfermero y te pregunta:&lt;&lt;/if&gt;&gt;
 [[¿un CRC?|CRC]]
 [[¿un RSA?|RSA]]
 [[¿un MD5?|MD5]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="24" name="Analitica" tags="" position="240,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="24" name="Analitica" tags="historia" position="250,1700" size="100,100">&lt;&lt;puntuacion -1 &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
 - ¿Aún no te has dado cuenta que no somos personas sino una triste ristra de bits?
 
@@ -734,7 +734,7 @@ El enfermero te mira con cara de desesperación y te dice:
 
 [[Volver|Error]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="25" name="Hamming" tags="" position="390,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;&gt;&gt;
+&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="25" name="Hamming" tags="historia" position="400,1700" size="100,100">&lt;&lt;puntuacion -1 &quot;Los código de Hamming permiten detectar y corregir errores, pero requieren enviar mucha información adicional para corregir una mínima cantidad de bits y no suele utilizarse en redes&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
 - Hace tiempo que ya no trabaja aquí, aunque cuando conseguía encontrar un error era capaz de sanarlo, su eficacia era muy baja, requería mucho papeleo.
 
@@ -742,7 +742,7 @@ El enfermero te mira con cara de desesperación y te dice:
 
 [[Volver|Error]]
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="26" name="DQP" tags="" position="540,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;&gt;&gt;
+&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="26" name="DQP" tags="historia" position="550,1700" size="100,100">&lt;&lt;puntuacion -1 &quot;No hay ningún mecanismo de control/detección de errores llamado así&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
 - No me estarás diciendo letras al azar, ¿no?
 
@@ -750,7 +750,7 @@ El enfermero te mira con cara de desesperación y te dice:
 
 [[Volver|Error]] 
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="27" name="CRC" tags="" position="690,1888" size="100,100">&lt;&lt;puntuacion 5 &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;&gt;&gt;
+&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="27" name="CRC" tags="historia" position="700,1700" size="100,100">&lt;&lt;puntuacion 5 &quot;La verificación por redundancia cíclica1 (CRC) es un código de detección de errores usado frecuentemente en redes digitales y especialmente en capa de enlace debido a que es muy eficiente su cálculo en hardware&quot;&gt;&gt;
 El enfermero asiente y te hace una comprobación CRC rutinaria. Aunque los cálculos son rápidos, notas como tu nerviosismo aumenta a la espera de los resultados.
 
 [img[enredados/img/nervioso.gif]]
@@ -759,7 +759,7 @@ Finalmente el enfermero te mira y te dice:
 - El resultado indica que está bien, puedes pasar a la estación de salida para seguir tu viaje.
 
 [[Aliviado, te diriges a la estación de salida|Frontera]] 
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="28" name="RSA" tags="" position="840,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="28" name="RSA" tags="historia" position="850,1700" size="100,100">&lt;&lt;puntuacion -1 &quot;RSA (Rivest, Shamir y Adleman) es un sistema criptográfico de clave pública desarrollado en 1979. Es el primer y más utilizado algoritmo de este tipo y es válido tanto para cifrar como para firmar digitalmente&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
 - No necesitas ese análisis, no estás encriptado.
 
@@ -767,15 +767,15 @@ El enfermero te mira con cara de desesperación y te dice:
 
 [[Volver|Error]] 
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="29" name="MD5" tags="" position="990,1888" size="100,100">&lt;&lt;puntuacion -1 &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;&gt;&gt;
+&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="29" name="MD5" tags="historia" position="1000,1700" size="100,100">&lt;&lt;puntuacion -1 &quot;MD5 (abreviatura de Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un algoritmo de reducción criptográfico de 128 bits ampliamente usado. Uno de sus usos es el de comprobar que algún archivo no haya sido modificado&quot;&gt;&gt;
 El enfermero te mira con cara de desesperación y te dice:
-- Nosotros no usamos ese tipo de análisis, eso se usa a más alto nivel
+- Nosotros no usamos ese tipo de análisis, eso se usa a más alto nivel.
 
 [img[enredados/img/error.gif]]
 
 [[Volver|Error]] 
 &lt;&lt;test_achievements&gt;&gt; \
-&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="30" name="Frontera" tags="" position="693,2024" size="100,100">La estación de salida está formado por cinco andenes numerados del 1 a 5. Encima de ellos hay una pantalla que indica el destino de cada uno de ellos. Su contenido es:
+&lt;&lt;set $errorComp to true&gt;&gt; \</tw-passagedata><tw-passagedata pid="30" name="Frontera" tags="historia" position="700,1850" size="100,100">La estación de salida está formado por cinco andenes numerados del 1 a 5. Encima de ellos hay una pantalla que indica el destino de cada uno de ellos. Su contenido es:
 &lt;table&gt;
 &lt;tr&gt;&lt;th&gt;Destino&lt;/th&gt;&lt;th&gt;Andén&lt;/th&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;130.0.0.0 /8&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;
@@ -787,12 +787,12 @@ El enfermero te mira con cara de desesperación y te dice:
 [img[enredados/img/decision.gif]]
 
 Examinas tu formulatio I.P.H.E.A.D.E.R. donde está apuntado que tu destino era 150.214.40.97 ¿Qué andén eliges?
-[[Anden 1|FIN2]]
-[[Anden 2|FIN2]]
-[[Anden 3|FIN2]]
-[[Anden 4|DESTINO]]
-[[Anden 5|FIN2]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="31" name="FIN2" tags="final" position="600,2200" size="100,100">&lt;&lt;puntuacion -5 &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;&gt;&gt;
+[[Andén 1|FIN2]]
+[[Andén 2|FIN2]]
+[[Andén 3|FIN2]]
+[[Andén 4|DESTINO]]
+[[Andén 5|FIN2]]
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="31" name="FIN2" tags="final" position="625,2000" size="100,100">&lt;&lt;puntuacion -5 &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;&gt;&gt;
 Te diriges al andén elegido y te montas en el tren. Tras un rato de viaje llegas al destino.
 
 Nada más bajarte, notas que algo no va bien, está nevando y hace muchísimos frio y los carteles están en un idioma raro que no entiendes. Te acercas al único edificio que ves. El guardia colocado en la puerta, mira tu formulario I.P.H.E.A.D.E.R. y con un mal español te dice:
@@ -804,7 +804,7 @@ Y te echa, dejándote a la interperie. Notas como el frio empieza a hacer efecto
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot;&gt;&gt;
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="32" name="DESTINO" tags="" position="775,2200" size="100,100">&lt;&lt;puntuacion 5 &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="32" name="DESTINO" tags="historia" position="775,2000" size="100,100">&lt;&lt;puntuacion 5 &quot;Para deducir la entrada de la tabla hay que mirar la columna Destino que está formado por dos datos ID_RED/PREFIJO. Hay que aplicar ese prefijo a la IP facilitada (hacer el AND) y luego comparar si te da el mismo ID_RED. En caso de que haya varios coincidentes se utiliza el que tenga máscara (prefijo) más largo&quot;&gt;&gt;
 Te diriges al andén elegido y te montas en el tren. Tras un rato de viaje llegas al destino.
 
 Nada más bajarte, ves la conocida simbología de la UMA. ¡Has acertado! Pero notas que Mensajín empieza a cambiar (&lt;b&gt;¡Plot Twist!&lt;/b&gt;):
@@ -816,14 +816,14 @@ Intermente piensas que realmente todo código Javascript es maliciosos (es el le
 [[Apagar el ordenador|FIN3]]
 [[Quitar el cable de red del ordenador|FIN4]]
 [[Abres una línea de comandos (Sí, desgraciadamente estamos en Windows)|Comando]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="33" name="FIN3" tags="final" position="615,2338" size="100,100">&lt;&lt;puntuacion -1 &quot;No es bueno quitarse de en medio, hay que encarar las dificultades ;)&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="33" name="FIN3" tags="final" position="650,2150" size="100,100">&lt;&lt;puntuacion -1 &quot;No es bueno quitarse de en medio, hay que encarar las dificultades ;)&quot;&gt;&gt;
 Apagas el ordenador y haces como si nada hubiese pasado (mala suerte para el siguiente que lo encienda) ... 
 
 [img[enredados/img/escondiendo.gif]]
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="34" name="FIN4" tags="final" position="765,2338" size="100,100">&lt;&lt;puntuacion -1 &quot;Era buena idea, pero hay casos en que no funciona :P&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="34" name="FIN4" tags="final" position="950,2150" size="100,100">&lt;&lt;puntuacion -1 &quot;Era buena idea, pero hay casos en que no funciona :P&quot;&gt;&gt;
 Quitas el cable para evitar que el virus envíe la información y ganar tiempo. Mensajín (quizás es momento de cambiarle el nombre) se enfada y dice:
 - ¡Si no es para mi, no será para nadie!
 
@@ -834,7 +834,7 @@ Y borra el disco duro de forma completa. Menos mal que hay copias de seguridad .
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="35" name="Comando" tags="" position="915,2338" size="100,100">&lt;&lt;puntuacion 5 &quot;Muy bien! Siempre se pueden superar los problemas ... o casi siempre&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="35" name="Comando" tags="historia" position="800,2150" size="100,100">&lt;&lt;puntuacion 5 &quot;Muy bien! Siempre se pueden superar los problemas ... o casi siempre&quot;&gt;&gt;
 El cursor parpadea en la línea de comandos. Sabes que tienes poco tiempo, a lo sumo para poner un comando para descubrir quién es el proceso que está enviado la información fuera del equipo y matarlo. 
 
 [img[enredados/img/comando.gif]]
@@ -844,9 +844,9 @@ El cursor parpadea en la línea de comandos. Sabes que tienes poco tiempo, a lo 
 [[netstat|FIN6]]
 [[arp|FIN5]]
 [[ping|FIN5]]
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="36" name="FIN5" tags="final" position="765,2488" size="100,100">&lt;&lt;puntuacion -5 &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="36" name="FIN5" tags="final" position="725,2300" size="100,100">&lt;&lt;puntuacion -5 &quot;Has elegido un comando incorrecto. Ping sirve para ver si otro equipo está accesible, ipconfig permite configurar el interfaz de red, arp consulta la tabla ARP (equivalencia entre MAC e IP)&quot;&gt;&gt;
 Escribes el comando de forma apresurada y Mensajín estalla en carcajadas:
-- ¿Qué tipo de comando es ese? En todo caso ya he subido toda la información a mi amo, el señor pirata, y está aprobando Cálculo a todos los alumnos.
+- ¿Qué tipo de comando es ese? En todo caso ya he subido toda la información a mi amo, el señor pirata, y está aprobando ADA y ED a todos los alumnos.
 
 Derrotado tu alejas del ordenador y lamentas no haber prestado más atención a las clases de redes :(
 
@@ -854,7 +854,7 @@ Derrotado tu alejas del ordenador y lamentas no haber prestado más atención a 
 !FIN
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
-&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="37" name="FIN6" tags="final" position="915,2488" size="100,100">&lt;&lt;puntuacion 10 &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;&gt;&gt;
+&lt;&lt;test_achievements&gt;&gt; \</tw-passagedata><tw-passagedata pid="37" name="FIN6" tags="final" position="875,2300" size="100,100">&lt;&lt;puntuacion 10 &quot;El comando netstat ofrece mucha información sobre el estado actual de las comunicaciones, entre ella las conexiones de nuestro equipo&quot;&gt;&gt;
 Escribes el comando &quot;netstat -b&quot; en el terminal y te muestra todas las conexiones actuales del equipo. Con tu pericia adquirida durante la asignatura de Redes y Sistemas Distribuidos, rápidamente localizas una conexión extraña que es la que usa Mensajín para enviar la información. 
 
 Con otro comando matas al proceso. Ves como Mensajín empieza a desaparecer pero con sus últimos bytes consigue decir:
@@ -869,7 +869,7 @@ Y desaparece.
 
 ¿Cuál es tu nombre? &lt;&lt;textbox &quot;$playerName&quot; &quot;Alumno&quot; &quot;Clasificacion&quot; autofocus&gt;&gt;
 &lt;&lt;test_achievements&gt;&gt; \
-</tw-passagedata><tw-passagedata pid="38" name="Puntuacion" tags="widget" position="450,400" size="100,100">&lt;&lt;widget &quot;puntuacion&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="38" name="Puntuacion" tags="widget" position="450,325" size="100,100">&lt;&lt;widget &quot;puntuacion&quot;&gt;&gt;
 	\&lt;&lt;silently&gt;&gt;
     	&lt;&lt;set _texto = &quot;&quot;&gt;&gt;
 		&lt;&lt;if ndef $args[0]&gt;&gt; 
@@ -894,28 +894,55 @@ Y desaparece.
 			&lt;&lt;set _texto += &quot;_p (?)&lt;/div&gt;&quot; &gt;&gt;
 		&lt;&lt;/if&gt;&gt;
 	&lt;&lt;/silently&gt;&gt; &lt;&lt;print _texto &gt;&gt;\
-&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="StoryCaption" tags="UIBar" position="275,400" size="100,100">¿Cuánto sabes de redes? ¡Prueba tu conocimiento!
+&lt;&lt;/widget&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="StoryCaption" tags="UIBar" position="300,325" size="100,100">¿Cuánto sabes de redes? ¡Prueba tu conocimiento!
 &lt;hr/&gt;&amp;#x1FA99; $puntos / 51
 &amp;#127942; &lt;&lt;print $logros.length&gt;&gt; / $achievements.length
-&lt;hr/&gt;</tw-passagedata><tw-passagedata pid="40" name="StorySubtitle" tags="UIBar" position="150,525" size="100,100">Una historia de RySD (UMA)</tw-passagedata><tw-passagedata pid="41" name="StoryAuthor" tags="UIBar" position="150,400" size="100,100">by GJLP</tw-passagedata><tw-passagedata pid="42" name="StoryDisplayTitle" tags="UIBar" position="275,525" size="100,100">&#39;&#39;Enredados&#39;&#39;</tw-passagedata><tw-passagedata pid="43" name="StoryInit" tags="data" position="575,400" size="100,100">&lt;&lt;set $puntos to 0&gt;&gt;
+&lt;hr/&gt;</tw-passagedata><tw-passagedata pid="40" name="StorySubtitle" tags="UIBar" position="175,450" size="100,100">Una historia de RySD (UMA)</tw-passagedata><tw-passagedata pid="41" name="StoryAuthor" tags="UIBar" position="175,325" size="100,100">by GJLP</tw-passagedata><tw-passagedata pid="42" name="StoryDisplayTitle" tags="UIBar" position="300,450" size="100,100">&#39;&#39;Enredados&#39;&#39;</tw-passagedata><tw-passagedata pid="43" name="StoryInit" tags="data" position="575,450" size="100,100">&lt;&lt;set $puntos to 0&gt;&gt;
 &lt;&lt;set $escenas to []&gt;&gt;
 &lt;&lt;set $errorDir to false&gt;&gt;
 &lt;&lt;set $errorComp to false&gt;&gt;
+&lt;&lt;set $repeticiones to false&gt;&gt;
 &lt;&lt;set $logros to recall(&#39;achievements_gained&#39;, [])&gt;&gt;
 &lt;&lt;set $scoreboard to recall(&#39;scoreboard&#39;, [])&gt;&gt;
 &lt;&lt;set $finales to recall(&#39;finales&#39;, [])&gt;&gt;
+&lt;&lt;set $tierra to recall(&quot;tierra&quot;, false)&gt;&gt;
+&lt;&lt;set $aire to recall(&quot;aire&quot;, false)&gt;&gt;
 
 &lt;&lt;set $achievements to []&gt;&gt;
+
+/% Logros de aceptar o no al inicio %/
 &lt;&lt;set $achievements.push({name: &quot;El gruñon benevolente&quot;, description: &quot;Pese a tus reticencias iniciales decides ayudar. ¡En el fondo (muy en el fondo) eres bueno!&quot;, condition: &quot;hasVisited(\&quot;Conciencia\&quot;)&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Aprendiz&quot;, description: &quot;Has conseguido más de 30 puntos. ¡Aún puedes mejorar!&quot;, condition:&quot;State.variables.puntos &gt; 30&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Maestro&quot;, description: &quot;Has conseguido más de 40 puntos. ¡Buena puntuación!&quot;, condition: &quot;State.variables.puntos &gt; 40&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Maestro Supremo&quot;, description: &quot;Has conseguido todos los puntos. ¡Fantásticos!&quot;, condition: &quot;State.variables.puntos === 51&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Fracaso absolutivo&quot;, description: &quot;Has consenguido morir con una puntuación negativa. ¡Era difícil caer más bajo!&quot;, condition: &quot;State.variables.puntos &lt; 0 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;El ingeniero de la esperanza&quot;, description: &quot;Has decidido ayudar directamente al necesitado. ¡Se ve que tienes tiempo de sobra!&quot;, condition: &quot;passage() === \&quot;TCPoUDP\&quot; &amp;&amp; !hasVisited(\&quot;Conciencia\&quot;)&quot;})&gt;&gt;
+
+/% Logros por puntos %/
+&lt;&lt;set $achievements.push({name: &quot;Aprendiz&quot;, description: &quot;Has conseguido más de 30 puntos. ¡Aún puedes mejorar!&quot;, condition:&quot;State.variables.puntos &gt; 30 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Maestro&quot;, description: &quot;Has conseguido más de 40 puntos. ¡La sabiduría es el camino al éxito!&quot;, condition: &quot;State.variables.puntos &gt; 40 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Maestro Supremo&quot;, description: &quot;Has conseguido todos los puntos. ¡Has acertado todo!&quot;, condition: &quot;State.variables.puntos === 51 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Fracaso absolutivo&quot;, description: &quot;Has consenguido morir con una puntuación negativa. ¡Es difícil caer más bajo!&quot;, condition: &quot;State.variables.puntos &lt; 0 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
 &lt;&lt;set $achievements.push({name: &quot;El cero a la izquierda&quot;, description: &quot;Has consenguido morir con 0 puntos. ¡Aún puedes superarte y conseguir puntuación negativa!&quot;, condition: &quot;State.variables.puntos === 0 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+
+/% Alcanzar el final %/
 &lt;&lt;set $achievements.push({name: &quot;Multiverso completado&quot;, description: &quot;Has visto todos los posibles finales. Tu lema debe ser ¡Hazte con todos!&quot;, condition: &quot;Story.lookup(\&quot;tags\&quot;, \&quot;final\&quot;).length == State.variables.finales.length&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;El ingeniero de la esperanza&quot;, description: &quot;Has decidido ayudar directamente al necesitado. ¡Se ve que tienes tiempo de sobra!&quot;, condition: &quot;passage() === \&quot;TCPoUDP\&quot; &amp;&amp; !hasVisited(\&quot;Conciencia\&quot;)&quot;})&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="Logros" tags="especiales" position="450,275" size="100,100">!Logros: $logros.length / $achievements.length
+&lt;&lt;set $achievements.push({name: &quot;Desenredado!&quot;, description: &quot;Has consenguido llegar al final bueno del juego. ¡This is the way!&quot;, condition: &quot;hasVisited(\&quot;FIN6\&quot;)&quot;})&gt;&gt;
+
+/% Logros de TCP %/
+&lt;&lt;set $achievements.push({name: &quot;Diana en uno&quot;, description: &quot;Has conseguido adivinar la dirección a la primera ... ¡de este intento!&quot;, condition: &quot;hasVisited(\&quot;IP\&quot;) &amp;&amp; !State.variables.errorDir&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Ensayo y Error&quot;, description: &quot;Has mirado todas las posibilidades de direcciones. ¡Esepro que haya sido por el logro!&quot;, condition: &quot;hasVisited(\&quot;IP\&quot;) &amp;&amp; hasVisited(\&quot;URL\&quot;) &amp;&amp; hasVisited(\&quot;MAC\&quot;) &amp;&amp; hasVisited(\&quot;PUERTO\&quot;) &amp;&amp; hasVisited(\&quot;PRIVADA\&quot;) &amp;&amp; hasVisited(\&quot;EXPERIMENTAL\&quot;)&quot;})&gt;&gt;
+
+/% Logros para enlace %/
+&lt;&lt;set $achievements.push({name: &quot;Te seguiré por tierra, por aire...&quot;, description: &quot;Has probado tanto por wifi como ethernet... ¡y sin fallar!&quot;, condition: &quot;State.variables.aire &amp;&amp; State.variables.tierra&quot;})&gt;&gt;
+
+/% Logros de reintentos %/
+&lt;&lt;set $achievements.push({name: &quot;A cabezota nadie me gana&quot;, description: &quot;Has intentado la misma opción (errónea) más de 3 veces. ¡Por insistir que no quede!&quot;, condition: &quot;State.variables.repeticiones&quot;})&gt;&gt;
+
+
+/% Logros de Comprobar error %/
+&lt;&lt;set $achievements.push({name: &quot;La suerte del principiante&quot;, description: &quot;Has conseguido adivinar la mecanismo de detección a la primera ... ¡de este intento!&quot;, condition: &quot;hasVisited(\&quot;CRC\&quot;) &amp;&amp; !State.variables.errorComp&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Todos los caminos llevan a la estación&quot;, description: &quot;Has mirado todas las posibilidades de códigos de error. ¡Esepro que haya sido por el logro!&quot;, condition: &quot;hasVisited(\&quot;Analitica\&quot;) &amp;&amp; hasVisited(\&quot;Hamming\&quot;) &amp;&amp; hasVisited(\&quot;DQP\&quot;) &amp;&amp; hasVisited(\&quot;CRC\&quot;) &amp;&amp; hasVisited(\&quot;RSA\&quot;) &amp;&amp; hasVisited(\&quot;MD5\&quot;)&quot;})&gt;&gt;
+</tw-passagedata><tw-passagedata pid="44" name="Logros" tags="especiales" position="450,200" size="100,100">&lt;h1&gt;@@display: flex; justify-content: center; align-items: center;&lt;&lt;back &quot;Volver&quot;&gt;&gt;@@&lt;/h1&gt;
+!Logros: $logros.length / $achievements.length
 &lt;&lt;show_achievements&gt;&gt; \
-@@display: flex; justify-content: center; align-items: center;&lt;&lt;back &quot;Volver&quot;&gt;&gt;@@</tw-passagedata><tw-passagedata pid="45" name="StoryMenu" tags="UIBar" position="275,275" size="100,100">[[Logros]] </tw-passagedata><tw-passagedata pid="46" name="achievements" tags="widget" position="575,525" size="100,100">&lt;&lt;widget &quot;show_achievements&quot;&gt;&gt; \
+</tw-passagedata><tw-passagedata pid="45" name="StoryMenu" tags="UIBar" position="300,200" size="100,100">[[Logros]] </tw-passagedata><tw-passagedata pid="46" name="achievements" tags="widget" position="575,325" size="100,100">&lt;&lt;widget &quot;show_achievements&quot;&gt;&gt; \
 	&lt;&lt;nobr&gt;&gt; 
 	&lt;table&gt;
     	&lt;&lt;for _i to 0; _i lt $achievements.length; _i++&gt;&gt; 
@@ -933,9 +960,25 @@ Y desaparece.
         &lt;&lt;/nobr&gt;&gt; \
 &lt;&lt;/widget&gt;&gt; \
 
+&lt;&lt;widget &quot;test_repeticiones&quot; &gt;&gt;\
+     &lt;&lt;set _errores to [&quot;URL&quot;, &quot;MAC&quot;, &quot;PUERTO&quot;, &quot;PRIVADA&quot;, &quot;EXPERIMENTAL&quot;, &quot;Analitica&quot;, &quot;Hamming&quot;, &quot;DQP&quot;, &quot;RSA&quot;, &quot;MD5&quot;] &gt;&gt;\
+     &lt;&lt;for _i to 0; _i &lt; _errores.length; _i++&gt;&gt;\
+    	&lt;&lt;set $repeticiones to $repeticiones or (visited(_errores[_i]) &gt; 3)&gt;&gt;\
+    &lt;&lt;/for&gt;&gt;\
+&lt;&lt;/widget&gt;&gt;\
+
 &lt;&lt;widget &quot;test_achievements&quot;&gt;&gt;\
 	&lt;&lt;if tags().includes(&quot;final&quot;)&gt;&gt;\
     	&lt;&lt;set $finales to $finales.concatUnique(passage())&gt;&gt;\
+    &lt;&lt;/if&gt;&gt;\
+    &lt;&lt;if !$repeticiones&gt;&gt;	&lt;&lt;test_repeticiones&gt;&gt;  &lt;&lt;/if&gt;&gt; \
+    &lt;&lt;if hasVisited(&quot;RTS&quot;) and not hasVisited(&quot;CTS&quot;)&gt;&gt; \
+    	&lt;&lt;set $aire to true&gt;&gt; \
+        &lt;&lt;run memorize(&#39;aire&#39;, true)&gt;&gt; \
+    &lt;&lt;/if&gt;&gt;\
+    &lt;&lt;if hasVisited(&quot;CARRETERA&quot;) and not hasVisited(&quot;PRECAUCION&quot;)&gt;&gt; \
+    	&lt;&lt;set $tierra to true&gt;&gt; \
+        &lt;&lt;run memorize(&#39;tierra&#39;, true)&gt;&gt; \
     &lt;&lt;/if&gt;&gt;\
 	&lt;&lt;set _text to &quot;&quot;&gt;&gt; \
     &lt;&lt;for _i to 0; _i lt $achievements.length; _i++&gt;&gt; \
