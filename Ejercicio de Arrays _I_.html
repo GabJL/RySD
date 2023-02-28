@@ -1,0 +1,232 @@
+<tw-storydata name="Ejercicio de Arrays (I)" startnode="3" creator="Twine" creator-version="2.6.1" format="SugarCube" format-version="2.21.0" ifid="0A3EC2CC-7CB2-43B4-8826-7A0CD9D67E34" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.progress-bar {
+    position: relative;
+    border: 1px solid #777;
+    background: black;
+    height: 1em;
+    width: 20em;
+	display: inline-block;
+  	vertical-align: middle;
+}
+
+.progress-value {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #00FF00;
+}
+
+.passage {
+	border-radius: 25px;
+	border: 2px solid white;
+	padding: 20px;
+	text-align: justify;
+	background-color: rbga(220,220,220,0.5);
+}
+
+strong {
+  	color: red;
+}
+
+u {
+  text-decoration: none;
+  color: lightgreen;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();</script><tw-passagedata pid="1" name="Enunciado" tags="" position="500,403.5" size="100,100">&lt;&lt;set $current_level = 0&gt;&gt;&lt;&lt;include &quot;Progreso&quot;&gt;&gt;
+!Introducción
+La composición química de una &#39;&#39;sustancia&#39;&#39; puede definirse como la cantidad de átomos de cada elemento que lo forma (&lt;&lt;linkreplace &quot;ejemplo&quot;&gt;&gt;el agua (H~~2~~O) está compuesta de 2 átomos de hidrógeno y 1 de oxígeno&lt;&lt;/linkreplace&gt;&gt;). Queremos hacer un programa para manejar la composición de sustancias. En concreto, de cada &#39;&#39;elemento químico&#39;&#39; nos interesa saber su símbolo y la cantidad de átomos de este elemento que aparece en la sustancia. Por lo tanto una sustancia (&#39;&#39;compuesto químico&#39;&#39;) serán varios elementos químicos con esas características. Varios ejemplos:
+
+{{{Agua 		= {{ {“H”, 2} , {“O”, 1} }}; // H2O}}}
+{{{Sal 		= {{ {“Na”, 1} , {“Cl”, 1} }}; // NaCl}}}
+&lt;&lt;linkreplace &quot;Más ejemplos&quot;&gt;&gt; {{{Butano 		= {{ {“C”, 4} , {“H”, 10} }}; // C4H10}}}
+{{{Azucar 		= {{ {“C”, 6} , {“H”, 6} }}; // C6H6}}} 
+&lt;&lt;linkreplace &quot;Aún más ejemplos&quot;&gt;&gt; {{{Bicarbonato	= {{ {“Na”, 1} , {“H”, 1} , {“C”, 1} , {“O”, 3} }};	// NaHCO3 }}}
+{{{Amoníaco	= {{ {“N”, 2} , {“H”, 3} }}; // NH3}}}&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
+
+En los siguientes pasos se pedirá crear las diferentes partes del programa. Todos los ejercicios deben hacerse sobre el mismo código, modificándolo y añadiendo los ejercicios solicitados.
+
+¿Seguimos?
+&gt;&lt;&lt;linkreplace &quot;Uhmm, no me ha quedado claro.&quot;&gt;&gt;No tengo más ayuda aquí :( pregunta al profesor.&lt;&lt;/linkreplace&gt;&gt;
+&gt;[[Claro!|Ejercicio1]]
+</tw-passagedata><tw-passagedata pid="2" name="Ejercicio1" tags="" position="696,400.5" size="100,100">&lt;&lt;set $current_level = 1&gt;&gt;&lt;&lt;include &quot;Progreso&quot;&gt;&gt;
+!Ejercicio 1: Tipos
+Añada la definición de los tipos apropiados para almacenar un &#39;&#39;compuesto química&#39;&#39; que sabemos que a lo sumo tiene &#39;&#39;20 elementos químicos&#39;&#39; (recuerde que de cada elemento elemento químico nos interesa saber tanto su símbolo como la cantidad de atómos que aparecen en una molécula de la sustancia).
+
+Las vacaciones han sido muy duras, ¿necesitas alguna ayuda?
+&gt;&lt;&lt;linkreplace &quot;Sí.&quot;&gt;&gt;Antes de darte pistas repasa cómo [[declarar tipos de registros|Declaracion]]. 
+&lt;&lt;linkreplace &quot;Aún necesito una pista.&quot;&gt;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;Debes declarar dos tipos uno para los &lt;&lt;linkreplace &quot;elementos&quot;&gt;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;elementos (un registro donde guardamos el símbolo del elemento y su cantidad)&lt;&lt;/linkreplace&gt;&gt; y otro para el &lt;&lt;linkreplace &quot;compuesto&quot;&gt;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;compuesto (un montón, array, de elementos)&lt;&lt;/linkreplace&gt;&gt;. 
+Puff, no lo saco ... &lt;&lt;linkreplace &quot;muestra la solución.&quot;&gt;&gt;Solución:&lt;&lt;set $puntos_previos -= 5 &gt;&gt;
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;20&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;;&lt;/span&gt; 
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;struct&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;simbolo;&lt;/span&gt; 
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;cantidad;&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tElemento;&lt;/span&gt;
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;array&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;tElemento,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tCompuesto;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
+Cuando acabes, [[pasa al siguiente ejercicio|Ejercicio2]].</tw-passagedata><tw-passagedata pid="3" name="Inicio" tags="" position="299,397.5" size="100,100">!!Volviendo de vacaciones!
+En esta clase vamos a hacer un ejercicio de array de registros de repaso de lo visto hasta la ahora (prácticamente todo lo que entra en la asignatura) de forma auto-guiada.
+
+¿Estás listo para empezar?
+&gt;&lt;&lt;linkreplace &quot;No.&quot;&gt;&gt;Para todos es duro volver de la vacaciones pero es lo que toca.&lt;&lt;/linkreplace&gt;&gt;
+&gt;[[Sí.|Enunciado]] 
+&lt;&lt;silently&gt;&gt;
+&lt;&lt;set $puntos to 0, $progreso to 0, $MAX = 5, $STEP_PROGRESO to 100.0/$MAX&gt;&gt;
+&lt;&lt;set $ejercicio to -1&gt;&gt;
+&lt;&lt;set $puntos_previos to 10&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Progreso" tags="" position="298,257.5" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;if $ejercicio &lt; $current_level&gt;&gt;
+	&lt;&lt;set $ejercicio = $current_level &gt;&gt;
+	&lt;&lt;if $puntos_previos &gt; 0&gt;&gt;
+		&lt;&lt;set $puntos += $puntos_previos&gt;&gt;
+	&lt;&lt;endif&gt;
+	&lt;&lt;set $puntos_previos = 10&gt;&gt;
+	&lt;&lt;set $progreso += $STEP_PROGRESO&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+&lt;&lt;/silently&gt;&gt;&lt;span style=&quot;with:50%;display:inline-block&quot;&gt; __Progreso:__ &lt;&lt;print &#39;&lt;div class=&quot;progress-bar&quot;&gt;&lt;div class=&quot;progress-value&quot; style=&quot;width:&#39;+$progreso+&#39;%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#39;&gt;&gt;
+&lt;/span&gt;&lt;span style=&quot;with:40%;position:relative;float:right;display:inline-block;vertical-align:top&quot;&gt;__Puntuación:__ $puntos puntos (de &lt;&lt;print $MAX*10&gt;&gt;)
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="5" name="Declaracion" tags="" position="706,600.5" size="100,100">!Definición de tipos
+!!Registros (o estructuras)
+Permite tener variables que almacene varios valores potencialmente de diferente tipo (aunque no es necesario esto). Cada uno de los valores almacenados se llama campo. Su declaración se hace de la siguiente forma:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;struct&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;tipo1&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;campo1;&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;tipo2&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;campo2;&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;...&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;NombreTipo;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+Por ejemplo una persona puede tener varios valores (campos) que indiquen su nombre, edad, estatura o sexo: 
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;struct&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;string&lt;/span&gt; 	&lt;span style=&quot;color: #f8f8f2&quot;&gt;nombre,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;apellidos;&lt;/span&gt;
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt;	&lt;span style=&quot;color: #f8f8f2&quot;&gt;edad;&lt;/span&gt;
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;double&lt;/span&gt;	&lt;span style=&quot;color: #f8f8f2&quot;&gt;altura;&lt;/span&gt;
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;char&lt;/span&gt;	&lt;span style=&quot;color: #f8f8f2&quot;&gt;sexo;&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tPersona;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+!!Arrays
+Al igual que las estructuras nos permiten almacenar múltiples valores en una variable pero en este caso siempre son valores del mismo tipo. En este caso no hay que poner nombre a cada valor, sino únicamente decir cuántos hay (luego podemos acceder con su índice, valor entre 0 y la cantidad de valores -1).
+
+La definición de un tipo array es:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;const&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;TAMAÑO&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;DEL&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;ARRAY;&lt;/span&gt;
+
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;array&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;TIPO,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;NombreTipo;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+Por ejemplo podemos definir un array de 100 números reales de la siguiente forma:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;const&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;100&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;;&lt;/span&gt;
+
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;array&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;double&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tArray;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+Recuerde que luego las posiciones van de 0 a MAX-1
+
+!!Mezclando tipos:
+Nada impide que el tipo base del array o el tipo de un campo de un registro sea a su vez un tipo complejo (array o registro) y se pueden crear tipos complejos del estilo siguiente:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;const&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX_EQUIPOS&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;22&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;;&lt;/span&gt;
+&lt;span style=&quot;color: #66d9ef&quot;&gt;const&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX_JUGADORES&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;20&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;;&lt;/span&gt;
+
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;array&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;tPersona,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX_JUGADORES&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tPlantilla;&lt;/span&gt;
+
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;struct&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;
+    &lt;span style=&quot;color: #f8f8f2&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;nombre;&lt;/span&gt;
+    &lt;span style=&quot;color: #f8f8f2&quot;&gt;tPersona&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;entrenador;&lt;/span&gt;
+    &lt;span style=&quot;color: #f8f8f2&quot;&gt;tPlantilla&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;jugadores;&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tEquipo;&lt;/span&gt;
+
+&lt;span style=&quot;color: #66d9ef&quot;&gt;typedef&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;array&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;tEquipo,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;MAX_EQUIPOS&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tLiga;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+Una liga es un montón (array) de equipos. Un equipo tiene un nombre (texto), un entrenador (persona) y una plantilla (un montón, array, de personas)...
+
+[[Volver al ejercicio|Ejercicio1]]</tw-passagedata><tw-passagedata pid="6" name="Fin" tags="" position="1295,399.5" size="100,100">&lt;&lt;set $current_level = 10&gt;&gt;&lt;&lt;include &quot;Progreso&quot;&gt;&gt;
+Por completar</tw-passagedata><tw-passagedata pid="7" name="Ejercicio2" tags="" position="895,400.5" size="100,100">&lt;&lt;set $current_level = 2&gt;&gt;&lt;&lt;include &quot;Progreso&quot;&gt;&gt;
+!Ejercicio 2: Escribir
+Realice una función que escriba un compuesto químico. La forma en que se escribe es la unión de los nombres de los elementos junto a sus cantidades. En caso que la cantidad solo sea uno, no muestre el número (vea los ejemplos a continuación). La función no debe leer sino recibir a través de parámetros los valores que necesite. 
+
+Para probarlo defina una par de variables del tipo definido previamente y asigne de forma fija su contenido. Por ejemplo:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;agua&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{{&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;H&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;2&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;O&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;}};&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;bicarbonato&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{{&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;Na&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;H&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;C&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;{&lt;/span&gt;&lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot;O&amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;3&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;}};&lt;/span&gt;	
+&lt;/pre&gt;&lt;/div&gt;
+Debería escribir por pantalla:
+{{{
+H2O
+NaHCO3
+}}}
+Note que la definición de las variables agua y bicarbonato por sí solo no nos sufiente para definir la sustancia sino que necesita más información para tratar con ese array. &lt;&lt;linkreplace &quot;Pista.&quot;&gt;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;Como el array no lo utilizamos entero cada compuesto tiene que tener una variable adicional y asociada indicando su tamaño (por ejemplo, el tamaño del agua sería 2 y el bicarbonato sería 3, y el resto de las posiciones del array no se usan).&lt;&lt;/linkreplace&gt;&gt; 
+
+Si no recuerda mucho como hacer una función que no devuelva nada (procedimiento), [[pulse aquí|Procedimiento]] y si no recuerda como acceder a los datos concretos dentro de la variable, [[pulse aquí|Acceso]].
+
+&lt;&lt;linkreplace &quot;Obtener una pista.&quot;&gt;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;A la función debe pasarle tanto el array como su tamaño.
+&lt;&lt;linkreplace &quot;Otra pista.&quot;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;Dentro de la función debe recorrer todo el array (bucle de 0 al tamaño) escribiendo el nombre y cantidad del elemento actual (c[i], suponiendo que c es el compuesto y el contador del bucle es i).
+&lt;&lt;linkreplace &quot;Otra pista.&quot;&gt;&lt;&lt;set $puntos_previos -= 1 &gt;&gt;Dentro del bucle debe comprobar si el elemento actual tiene más de 1 átomo (c[i].cantidad &gt; 1). 
+&lt;&lt;linkreplace &quot;Solución.&quot;&gt;&lt;&lt;set $puntos_previos -= 5 &gt;&gt;Solución:
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #a6e22e&quot;&gt;Escribir&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;(tCompuesto&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;c,&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tam){&lt;/span&gt;
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;0&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;tam;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;++&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;){&lt;/span&gt;
+		&lt;span style=&quot;color: #f8f8f2&quot;&gt;cout&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;c[i].simbolo;&lt;/span&gt;
+		&lt;span style=&quot;color: #66d9ef&quot;&gt;if&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;(c[i].cantidad&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;1&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;){&lt;/span&gt;
+			&lt;span style=&quot;color: #f8f8f2&quot;&gt;cout&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;c[i].cantidad;&lt;/span&gt;
+		&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;&lt;&lt;/linkreplace&gt;&gt;
+
+Cuando acabe, [[pase al siguiente ejercicio|Ejercicio3]].</tw-passagedata><tw-passagedata pid="8" name="Procedimiento" tags="" position="833,601.5" size="100,100">!Funciones:
+Muchas veces conviene  modularizar el código (separar parte del código) por diferentes motivos (simplifica el código, permite reutilizar varias veces el mismo código sin reutilizar...). 
+
+Esos trozos de código de forma general se llaman funciones, aunque de forma concreta se pueden denominar procedimiento si la función no devuelve nada.
+
+!!Procedimientos:
+Son funciones que no devuelven nada y propósito habitualmente es escribir por pantalla o en caso en que queramos devolver los valores como parámetros de salida.
+
+La sintaxis básica es la siguiente:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #a6e22e&quot;&gt;nombrefuncion&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;(parametros){&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;Codigo&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+Empieza con {{{void}}} indicando que no devuelve nada. Luego está el nombre, que debe ser algo significativo respecto a lo que hace. A continuación se ponen entre paréntesis los parámetros que son pares {{{tipo nombre}}} separados por comas. Se ponen tantos  parámetros como datos necesita la función para realizar su labor. Incluso puede que no reciba parámetros (pero los paréntesis sí son obligaotrios). Finalmente viene el código entre llaves.
+
+Por ejemplo, la siguiente función escribe por pantalla todos los valores entre dos valores que recibe por parámetros:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;void&lt;/span&gt; &lt;span style=&quot;color: #a6e22e&quot;&gt;EscribirNumeros&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;minimo,&lt;/span&gt; &lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;maximo){&lt;/span&gt;
+	&lt;span style=&quot;color: #66d9ef&quot;&gt;for&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;(&lt;/span&gt;&lt;span style=&quot;color: #66d9ef&quot;&gt;int&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;=&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;minimo;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;maximo;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt;&lt;span style=&quot;color: #f92672&quot;&gt;++&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;){&lt;/span&gt;
+		&lt;span style=&quot;color: #f8f8f2&quot;&gt;cout&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;i&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color: #e6db74&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;;&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt;
+	&lt;span style=&quot;color: #f8f8f2&quot;&gt;cout&lt;/span&gt; &lt;span style=&quot;color: #f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color: #f8f8f2&quot;&gt;endl;&lt;/span&gt;
+&lt;span style=&quot;color: #f8f8f2&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+!!Usando los procedimientos
+Como un procedimiento no devuelve nada, no puede usarse dentro de ninguna expresión, cálculo, escritura... Debe llamarse como sentencia independiente:
+
+&lt;!-- HTML generated using hilite.me --&gt;&lt;div style=&quot;background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;&quot;&gt;&lt;pre style=&quot;margin: 0; line-height: 125%&quot;&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;EscribirNumeros(&lt;/span&gt;&lt;span style=&quot;color: #ae81ff&quot;&gt;4&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;,&lt;/span&gt; &lt;span style=&quot;color: #ae81ff&quot;&gt;9&lt;/span&gt;&lt;span style=&quot;color: #f8f8f2&quot;&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+[[Volver al ejercicio|Ejercicio2]]</tw-passagedata><tw-passagedata pid="9" name="Acceso" tags="" position="946,600.5" size="100,100">!Accediendo a valores de tipos complejos
+!!Acceso a una posición del array
+El acceso a un valor del array se hace con {{{variable[posicion]}}} donde posición varía entre 0 y el tamaño del array - 1. Por ejemplo, {{{a[7] = 10;}}} accede a la octava posición del array a y le asigna un 10.
+!!Accediendo a un campo de un registro
+Para acceder al valor de un campo de un registro se hace con {{{variable.campo}}}. Por ejemplo, con {{{cout &lt;&lt; jon.edad;}}} accedemos al campo edad de la variable jon y en este caso lo escribimos por pantalla.
+!!Accediendo con array de registros.
+Por ejemplo, si suponemos que equipo es una variable que almacena un array de personas, con {{{if(equipo[2].altura &gt; 1.80)}}} accedemos al tercer jugador (equipo[2]) y dentro de ese jugador miramos su altura (equipo[2].altura) y miramos si ese valor es mayor de 1.80.
+
+[[Volver al ejercicio|Ejercicio2]]</tw-passagedata><tw-passagedata pid="10" name="Ejercicio3" tags="" position="1102,401.5" size="100,100">&lt;&lt;set $current_level = 3&gt;&gt;&lt;&lt;include &quot;Progreso&quot;&gt;&gt;
+!Ejercicio 3: Leer
+Acabamos los ejercicios de casa, solicitando una función que lea un compuesto. La lectura la haremos pidiendo para cada elemento que aparece en el compuesto su símbolo y la cantidad de átomos que hay. Cuando se lea que la cantidad de átomos es 0 o negativo se acaba la lectura. También se debe tener en cuenta que  si se mete dos veces el mismo elemento no debe añadirse dos veces al elemento sino solo meter tenerlo una vez con la suma de los átomos indicados en cada lectura. A continuación se muestra un ejemplo que tras leerlo lo escribimos con la función del ejercicio anterior:
+{{{
+Simbolo: H
+Cantidad: 1
+Simbolo: O
+Cantidad: 1
+Simbolo: H
+Cantidad: 1
+Simbolo: Na
+Cantidad: 0
+El elemento leido es H2O
+}}}
+Este ejercicio ya es más complejo y se recomienda que antes de empezar a programarlo piense que pasos se deben hacer e incluso cómo dividirlo en funciones.
+
+A continuación se muestran los pasos para resolverlos
+
+[[Completado!|Fin]]</tw-passagedata></tw-storydata>
