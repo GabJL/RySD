@@ -915,7 +915,7 @@ Y desaparece.
 &lt;&lt;set $achievements.push({name: &quot;El ingeniero de la esperanza&quot;, description: &quot;Has decidido ayudar directamente al necesitado. ¡Se ve que tienes tiempo de sobra!&quot;, condition: &quot;passage() === \&quot;TCPoUDP\&quot; &amp;&amp; !hasVisited(\&quot;Conciencia\&quot;)&quot;})&gt;&gt;
 
 /% Logros por puntos %/
-&lt;&lt;set $achievements.push({name: &quot;Aprendiz&quot;, description: &quot;Has conseguido más de 30 puntos. ¡Aún puedes mejorar!&quot;, condition:&quot;State.variables.puntos &gt; 30 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Padawan&quot;, description: &quot;Has conseguido más de 30 puntos. ¡Aún puedes mejorar!&quot;, condition:&quot;State.variables.puntos &gt; 30 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
 &lt;&lt;set $achievements.push({name: &quot;Maestro&quot;, description: &quot;Has conseguido más de 40 puntos. ¡La sabiduría es el camino al éxito!&quot;, condition: &quot;State.variables.puntos &gt; 40 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
 &lt;&lt;set $achievements.push({name: &quot;Maestro Supremo&quot;, description: &quot;Has conseguido todos los puntos. ¡Has acertado todo!&quot;, condition: &quot;State.variables.puntos === 51 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
 &lt;&lt;set $achievements.push({name: &quot;Fracaso absoluto&quot;, description: &quot;Has consenguido morir con una puntuación negativa. ¡Es difícil caer más bajo!&quot;, condition: &quot;State.variables.puntos &lt; 0 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
@@ -938,7 +938,10 @@ Y desaparece.
 
 /% Logros de Comprobar error %/
 &lt;&lt;set $achievements.push({name: &quot;La suerte del principiante&quot;, description: &quot;Has conseguido adivinar la mecanismo de detección a la primera ... ¡de este intento!&quot;, condition: &quot;hasVisited(\&quot;CRC\&quot;) &amp;&amp; !State.variables.errorComp&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Todos los caminos llevan a la estación&quot;, description: &quot;Has mirado todas las posibilidades de códigos de error. ¡Esepro que haya sido por el logro!&quot;, condition: &quot;hasVisited(\&quot;Analitica\&quot;) &amp;&amp; hasVisited(\&quot;Hamming\&quot;) &amp;&amp; hasVisited(\&quot;DQP\&quot;) &amp;&amp; hasVisited(\&quot;CRC\&quot;) &amp;&amp; hasVisited(\&quot;RSA\&quot;) &amp;&amp; hasVisited(\&quot;MD5\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Todos los caminos llevan a la estación&quot;, description: &quot;Has mirado todas las posibilidades de códigos de error. ¡Espero que haya sido por el logro!&quot;, condition: &quot;hasVisited(\&quot;Analitica\&quot;) &amp;&amp; hasVisited(\&quot;Hamming\&quot;) &amp;&amp; hasVisited(\&quot;DQP\&quot;) &amp;&amp; hasVisited(\&quot;CRC\&quot;) &amp;&amp; hasVisited(\&quot;RSA\&quot;) &amp;&amp; hasVisited(\&quot;MD5\&quot;)&quot;})&gt;&gt;
+
+/% Logros por conseguir todos los logros %/
+&lt;&lt;set $achievements.push({name: &quot;Logro secreto: El elegido&quot;, description: &quot;Has conseguido todos los logros ... este tiempo deberías habérselo dedicado a estudiar :P&quot;, condition: &quot;(State.variables.achievements.length - 1) == State.variables.logros.length&quot;})&gt;&gt;
 </tw-passagedata><tw-passagedata pid="44" name="Logros" tags="especiales" position="450,200" size="100,100">&lt;h1&gt;@@display: flex; justify-content: center; align-items: center;&lt;&lt;back &quot;Volver&quot;&gt;&gt;@@&lt;/h1&gt;
 !Logros: $logros.length / $achievements.length
 &lt;&lt;show_achievements&gt;&gt; \
@@ -951,8 +954,10 @@ Y desaparece.
                 	&lt;&lt;set _texto += &quot;&lt;tr class=\&quot;win\&quot;&gt;&lt;td&gt;&lt;span class=\&quot;&quot;&gt;&gt;
                 	&lt;&lt;set _texto += &quot;conseguido\&quot;&gt;[&quot;+$achievements[_i].name+&quot;]&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&quot;+$achievements[_i].description + &quot;&lt;/td&gt;&lt;/tr&gt;&quot;&gt;&gt; 
                  &lt;&lt;else&gt;&gt; 
-                	&lt;&lt;set _texto += &quot;&lt;tr class=\&quot;no_win\&quot;&gt;&lt;td&gt;&lt;span class=\&quot;&quot;&gt;&gt;
-                 	&lt;&lt;set _texto += &quot;no_conseguido\&quot;&gt;[&quot;+$achievements[_i].name+&quot;]&lt;/span&gt;&lt;/td&gt;&lt;td&gt;Por descubrir&lt;/td&gt;&lt;/tr&gt;&quot;&gt;&gt;
+                 	&lt;&lt;if _i != ($achievements.length - 1) &gt;&gt;
+                		&lt;&lt;set _texto += &quot;&lt;tr class=\&quot;no_win\&quot;&gt;&lt;td&gt;&lt;span class=\&quot;&quot;&gt;&gt;
+                 		&lt;&lt;set _texto += &quot;no_conseguido\&quot;&gt;[&quot;+$achievements[_i].name+&quot;]&lt;/span&gt;&lt;/td&gt;&lt;td&gt;Por descubrir&lt;/td&gt;&lt;/tr&gt;&quot;&gt;&gt;
+                     &lt;&lt;/if&gt;&gt;
                   &lt;&lt;/if&gt;&gt;
                   &lt;&lt;print _texto&gt;&gt;
              &lt;&lt;/for&gt;&gt;
