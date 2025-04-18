@@ -1,4 +1,4 @@
-Ejemplo de uso de Twine para Redes y Sistemas Distribuidos
+Ejemplo de uso de Twine para Redes y Servicios
 
 [Probar ejemplo de redes](RyS.html)
 
