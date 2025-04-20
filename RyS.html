@@ -974,11 +974,11 @@ Y desaparece.
 &lt;&lt;set $achievements.push({name: &quot;El ingeniero de la esperanza&quot;, description: &quot;Has decidido ayudar directamente al necesitado. ¡Se ve que tienes tiempo de sobra!&quot;, condition: &quot;passage() === \&quot;TCPoUDP\&quot; &amp;&amp; !hasVisited(\&quot;Conciencia\&quot;)&quot;})&gt;&gt;
 
 /% Logros por puntos %/
-&lt;&lt;set $achievements.push({name: &quot;Padawan&quot;, description: &quot;Has conseguido más de 30 puntos. ¡Aún puedes mejorar!&quot;, condition:&quot;State.variables.puntos &gt; 30 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Maestro&quot;, description: &quot;Has conseguido más de 40 puntos. ¡La sabiduría es el camino al éxito!&quot;, condition: &quot;State.variables.puntos &gt; 40 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Maestro Supremo&quot;, description: &quot;Has conseguido todos los puntos. ¡Has acertado todo!&quot;, condition: &quot;State.variables.puntos === 51 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;Fracaso absoluto&quot;, description: &quot;Has consenguido morir con una puntuación negativa. ¡Es difícil caer más bajo!&quot;, condition: &quot;State.variables.puntos &lt; 0 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
-&lt;&lt;set $achievements.push({name: &quot;El cero a la izquierda&quot;, description: &quot;Has consenguido morir con 0 puntos. ¡Aún puedes superarte y conseguir puntuación negativa!&quot;, condition: &quot;State.variables.puntos === 0 &amp;&amp; tags().includes(\&quot;final\&quot;)&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Padawan&quot;, description: &quot;Has conseguido más de 30 puntos. ¡Aún puedes mejorar!&quot;, condition:&quot;State.variables.puntos &gt; 30 &amp;&amp; (tags().includes(\&quot;final\&quot;) || tags().includes(\&quot;final2\&quot;))&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Maestro&quot;, description: &quot;Has conseguido más de 40 puntos. ¡La sabiduría es el camino al éxito!&quot;, condition: &quot;State.variables.puntos &gt; 40 &amp;&amp; (tags().includes(\&quot;final\&quot;) || tags().includes(\&quot;final2\&quot;))&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Maestro Supremo&quot;, description: &quot;Has conseguido todos los puntos. ¡Has acertado todo!&quot;, condition: &quot;State.variables.puntos === 51 &amp;&amp; (tags().includes(\&quot;final\&quot;) || tags().includes(\&quot;final2\&quot;))&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;Fracaso absoluto&quot;, description: &quot;Has consenguido morir con una puntuación negativa. ¡Es difícil caer más bajo!&quot;, condition: &quot;State.variables.puntos &lt; 0 &amp;&amp; (tags().includes(\&quot;final\&quot;) || tags().includes(\&quot;final2\&quot;))&quot;})&gt;&gt;
+&lt;&lt;set $achievements.push({name: &quot;El cero a la izquierda&quot;, description: &quot;Has consenguido morir con 0 puntos. ¡Aún puedes superarte y conseguir puntuación negativa!&quot;, condition: &quot;State.variables.puntos === 0 &amp;&amp; (tags().includes(\&quot;final\&quot;) || tags().includes(\&quot;final2\&quot;))&quot;})&gt;&gt;
 
 /% Alcanzar el final %/
 &lt;&lt;set $achievements.push({name: &quot;Multiverso completado&quot;, description: &quot;Has visto todos los posibles finales. Tu lema debe ser ¡Hazte con todos!&quot;, condition: &quot;Story.lookup(\&quot;tags\&quot;, \&quot;final\&quot;).length == State.variables.finales.length&quot;})&gt;&gt;
@@ -1067,7 +1067,7 @@ Y desaparece.
     &lt;&lt;/if&gt;&gt;\
 	&lt;&lt;set _text to &quot;&quot;&gt;&gt; \
     &lt;&lt;for _i to 0; _i lt $achievements.length; _i++&gt;&gt; \
-		&lt;&lt;if not $logros.includes(_i) and eval($achievements[_i].condition) &gt;&gt; \
+      	&lt;&lt;if not $logros.includes(_i) and eval($achievements[_i].condition) &gt;&gt; \
         	&lt;&lt;set $logros.push(_i)&gt;&gt; \ 
             &lt;&lt;set _text += &quot;[&quot;+$achievements[_i].name+&quot;] &quot;&gt;&gt;\
     	&lt;&lt;/if&gt;&gt;\  
